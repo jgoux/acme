@@ -26,6 +26,7 @@
     "@acme/tsconfig": "workspace:*"
   },
   "dependencies": {
+    "@acme/prisma": "workspace:*",
     "@acme/sdk": "workspace:*",
     "@tinyhttp/app": "2.0.22",
     "@trpc/server": "10.0.0-alpha.25",
