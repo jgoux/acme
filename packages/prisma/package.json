@@ -2,24 +2,20 @@
   "name": "@acme/prisma",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
     "./factories": {
       "types": "./dist/factories/index.d.ts",
-      "import": "./dist/factories/index.js",
-      "require": "./dist/factories/index.cjs",
-      "default": "./dist/factories/index.js"
+      "import": "./dist/factories/index.mjs",
+      "require": "./dist/factories/index.js"
     }
   },
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "prisma generate && acme-scripts build && acme-scripts build src/factories/index.ts --project tsconfig.build-factories.json --outDir dist/factories",
     "dev": "prisma generate --watch",
