@@ -12,6 +12,13 @@ generator factories {
   output = "src/factories/__generated__"
 }
 
+generator zod {
+  provider = "zod-prisma"
+  output = "src/zod/__generated__"
+  modelSuffix = "Schema"
+  relationModel = false
+}
+
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique

@@ -3,5 +3,5 @@
  */
 module.exports = {
   extends: ["@acme/eslint-config/recommended"],
-  ignorePatterns: ["**/generated/*"],
+  ignorePatterns: ["**/__generated__/*"],
 };

@@ -4,5 +4,5 @@
     "outDir": "dist/factories"
   },
   "include": ["src/factories"],
-  "exclude": ["src/factories/__generated__"]
+  "exclude": ["**/__generated__/*.js"]
 }

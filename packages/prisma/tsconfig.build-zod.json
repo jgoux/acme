@@ -1,0 +1,7 @@
+{
+  "extends": "@acme/tsconfig/node",
+  "compilerOptions": {
+    "outDir": "dist/zod"
+  },
+  "include": ["src/zod"]
+}

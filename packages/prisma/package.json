@@ -12,25 +12,38 @@
       "types": "./dist/factories/index.d.ts",
       "import": "./dist/factories/index.mjs",
       "require": "./dist/factories/index.js"
+    },
+    "./zod": {
+      "types": "./dist/zod/index.d.ts",
+      "import": "./dist/zod/index.mjs",
+      "require": "./dist/zod/index.js"
     }
   },
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "prisma generate && acme-scripts build && acme-scripts build src/factories/index.ts --project tsconfig.build-factories.json --outDir dist/factories",
-    "dev": "prisma generate --watch",
-    "lint": "acme-scripts lint"
+    "dev": "chokidar schema.prisma -c 'pnpm build'",
+    "lint": "acme-scripts lint",
+    "build:prisma": "acme-scripts build",
+    "build:factories": "acme-scripts build src/factories/index.ts --project tsconfig.build-factories.json --outDir dist/factories",
+    "build:zod": "acme-scripts build src/zod/index.ts --project tsconfig.build-zod.json --outDir dist/zod",
+    "build:all": "pnpm build:prisma && pnpm build:factories && pnpm build:zod",
+    "build": "prisma generate && pnpm build:all",
+    "clean": "acme-scripts clean"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/scripts": "workspace:*",
     "@acme/tsconfig": "workspace:*",
+    "chokidar-cli": "3.0.0",
     "prisma": "3.15.1",
     "prisma-factory": "0.1.12",
-    "typescript": "4.7.3"
+    "typescript": "4.7.3",
+    "zod-prisma": "0.5.4"
   },
   "dependencies": {
     "@faker-js/faker": "7.2.0",
-    "@prisma/client": "3.15.1"
+    "@prisma/client": "3.15.1",
+    "zod": "3.17.3"
   }
 }
