@@ -1,0 +1,8 @@
+{
+  "extends": "@acme/tsconfig/node",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/factories"]
+}
