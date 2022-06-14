@@ -3,5 +3,6 @@
   "compilerOptions": {
     "outDir": "dist/factories"
   },
-  "include": ["src/factories"]
+  "include": ["src/factories"],
+  "exclude": ["src/factories/__generated__"]
 }

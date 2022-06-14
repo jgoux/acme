@@ -9,7 +9,7 @@ generator client {
 
 generator factories {
   provider = "prisma-factory"
-  output = "generated/factories"
+  output = "src/factories/__generated__"
 }
 
 model User {

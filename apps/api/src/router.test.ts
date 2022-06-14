@@ -1,7 +1,10 @@
-import { PrismaClient } from "@acme/prisma";
+import { ProfileFactory, UserFactory } from "@acme/prisma/factories";
 
-const prisma = new PrismaClient();
-
-const users = await prisma.user.findMany();
-
-console.log(users);
+it("should create a random user inputs", () => {
+  const user = UserFactory.build({
+    profile: {
+      create: ProfileFactory.build(),
+    },
+  });
+  console.log(user);
+});
