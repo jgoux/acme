@@ -24,7 +24,10 @@
     "clean": "acme-scripts clean"
   },
   "dependencies": {
-    "@prisma/generator-helper": "3.15.1"
+    "@prisma/client": "3.15.1",
+    "@prisma/generator-helper": "3.15.1",
+    "@prisma/sdk": "3.15.1",
+    "ts-morph": "15.1.0"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

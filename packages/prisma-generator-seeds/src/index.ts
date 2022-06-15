@@ -1,7 +1,7 @@
 import { generatorHandler } from "@prisma/generator-helper";
 
 import { version } from "../package.json";
-import { generateSeed } from "./generate-seed.js";
+import { generate } from "./generate.js";
 
 generatorHandler({
   onManifest() {
@@ -12,6 +12,6 @@ generatorHandler({
     };
   },
   onGenerate(options) {
-    return generateSeed(options);
+    return generate(options);
   },
 });
