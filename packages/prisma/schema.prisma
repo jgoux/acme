@@ -7,17 +7,22 @@ generator client {
   provider = "prisma-client-js"
 }
 
-generator factories {
-  provider = "prisma-factory"
-  output = "src/factories/__generated__"
+// generator factories {
+//   provider = "prisma-factory"
+//   output = "src/factories/__generated__"
+// }
+
+generator seeds {
+  provider = "prisma-generator-seeds"
+  output = "src/seeds/__generated__"
 }
 
-generator zod {
-  provider = "zod-prisma"
-  output = "src/zod/__generated__"
-  modelSuffix = "Schema"
-  relationModel = false
-}
+// generator zod {
+//   provider = "zod-prisma"
+//   output = "src/zod/__generated__"
+//   modelSuffix = "Schema"
+//   relationModel = false
+// }
 
 model User {
   id      Int      @id @default(autoincrement())

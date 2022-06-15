@@ -100,6 +100,7 @@ importers:
   packages/prisma:
     specifiers:
       '@acme/eslint-config': workspace:*
+      '@acme/prisma-generator-seeds': workspace:*
       '@acme/scripts': workspace:*
       '@acme/tsconfig': workspace:*
       '@faker-js/faker': 7.2.0
@@ -116,6 +117,7 @@ importers:
       zod: 3.17.3
     devDependencies:
       '@acme/eslint-config': link:../eslint-config
+      '@acme/prisma-generator-seeds': link:../prisma-generator-seeds
       '@acme/scripts': link:../scripts
       '@acme/tsconfig': link:../tsconfig
       chokidar-cli: 3.0.0
@@ -123,6 +125,19 @@ importers:
       prisma-factory: 0.1.12_rirs7psxv6nrhuhg3eoqt6t26e
       typescript: 4.7.3
       zod-prisma: 0.5.4_prisma@3.15.1+zod@3.17.3
+
+  packages/prisma-generator-seeds:
+    specifiers:
+      '@acme/eslint-config': workspace:*
+      '@acme/scripts': workspace:*
+      '@acme/tsconfig': workspace:*
+      '@prisma/generator-helper': 3.15.1
+    dependencies:
+      '@prisma/generator-helper': 3.15.1
+    devDependencies:
+      '@acme/eslint-config': link:../eslint-config
+      '@acme/scripts': link:../scripts
+      '@acme/tsconfig': link:../tsconfig
 
   packages/scripts:
     specifiers:
@@ -297,7 +312,6 @@ packages:
       strip-ansi: 6.0.1
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@prisma/debug/3.8.1:
     resolution: {integrity: sha512-ft4VPTYME1UBJ7trfrBuF2w9jX1ipDy786T9fAEskNGb+y26gPDqz5fiEWc2kgHNeVdz/qTI/V3wXILRyEcgxQ==}
@@ -367,7 +381,6 @@ packages:
       cross-spawn: 7.0.3
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@prisma/generator-helper/3.8.1:
     resolution: {integrity: sha512-3zSy+XTEjmjLj6NO+/YPN1Cu7or3xA11TOoOnLRJ9G4pTT67RJXjK0L9Xy5n+3I0Xlb7xrWCgo8MvQQLMWzxPA==}
@@ -620,13 +633,11 @@ packages:
     resolution: {integrity: sha512-KuwNhp3eza+Rhu8IFI5HUXRP0LIhqH5cAjubUvGXXthh4YYBuP2ntwEX+Cz8GJoZUHlKo247wPWOfA9LYEq4cw==}
     dependencies:
       '@types/node': 17.0.42
-    dev: true
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
     dependencies:
       '@types/ms': 0.7.31
-    dev: true
 
   /@types/eslint/8.4.3:
     resolution: {integrity: sha512-YP1S7YJRMPs+7KZKDb9G63n8YejIwW9BALq7a5j2+H4yl6iOv9CB29edho+cuFRrvmJbbaH2yiVChKLJVysDGw==}
@@ -648,11 +659,9 @@ packages:
 
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
-    dev: true
 
   /@types/node/17.0.42:
     resolution: {integrity: sha512-Q5BPGyGKcvQgAMbsr7qEGN/kIPN6zZecYYABeTDBizOsau+2NMdSVTar9UQw21A2+JyA2KRNDYaYrPB0Rpk2oQ==}
-    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}

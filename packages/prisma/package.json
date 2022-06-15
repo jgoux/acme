@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
+    "@acme/prisma-generator-seeds": "workspace:*",
     "@acme/scripts": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "chokidar-cli": "3.0.0",

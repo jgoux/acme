@@ -1,0 +1,9 @@
+{
+  "extends": "@acme/tsconfig/node",
+  "compilerOptions": {
+    "outDir": "dist",
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts"]
+}
