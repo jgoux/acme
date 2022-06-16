@@ -17,7 +17,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "acme-scripts dev",
-    "build": "acme-scripts build",
+    "build": "acme-scripts build && pnpm -w i",
     "lint": "acme-scripts lint",
     "start": "acme-scripts start",
     "test": "acme-scripts test",
