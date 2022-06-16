@@ -206,6 +206,12 @@ type CategoryMap<T extends CategoryFactoryType = "CategoryCreateInput"> =
   Quantity & {
     create?: (index: number) => CategoryFactory[T];
   };
+interface SeedMap {
+  User?: UserMap;
+  Profile?: ProfileMap;
+  Post?: PostMap;
+  Category?: CategoryMap;
+}
 
 interface SeedConfig {
   prisma: PrismaClient;
@@ -240,10 +246,3 @@ export const createSeed: CreateSeed =
       )
     );
   };
-
-interface SeedMap {
-  User?: UserMap;
-  Profile?: ProfileMap;
-  Post?: PostMap;
-  Category?: CategoryMap;
-}
