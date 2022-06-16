@@ -93,41 +93,45 @@ type UserCreateInput = Partial<RemoveRelationFields<Prisma.UserCreateInput>> & {
  */
 const getModelCreateInputFieldType = ({
   relationFields: r,
-  typesRegistry,
-}: {
+}: // typesRegistry,
+{
   typesRegistry: Map<string, string>;
   relationFields: Model["relationFields"][number];
 }) => {
   // <FieldType>CreateNestedOneWithout<RelatedFielName>Input
   const relatedFieldName = capitalize(r.relatedField.name);
-  const basetypeName = `${r.field.type}CreateNestedOneWithout${relatedFieldName}Input`;
-  typesRegistry.set(
-    `${r.field.type}CreateNestedOneWithout${relatedFieldName}Input`,
-    `
-  interface ${basetypeName} {
-    create?: XOR<
-    ${r.field.type}CreateWithout${relatedFieldName}Input,
-    Prisma.${r.field.type}UncheckedCreateWithout${relatedFieldName}Input
-    >;
-    connectOrCreate?: ${r.field.type}CreateOrConnectWithout${relatedFieldName}Input;
-    connect?: Prisma.${r.field.type}WhereUniqueInput;
-  };
-`
-  );
-  typesRegistry.set(
-    `${r.field.type}CreateOrConnectWithout${relatedFieldName}Input`,
-    `
-      interface ${r.field.type}CreateOrConnectWithout${relatedFieldName}Input {
-        where: Prisma.${r.field.type}WhereUniqueInput;
-        create: XOR<
-        ${r.field.type}CreateWithout${relatedFieldName}Input,
-        Prisma.${r.field.type}UncheckedCreateWithout${relatedFieldName}Input
-        >;
-      }
-    `
-  );
 
-  return basetypeName;
+  return `${r.field.type}CreateWithout${relatedFieldName}Input`;
+
+  // TODO: "connect" the relation instead of creating it
+  //   const basetypeName = `${r.field.type}CreateNestedOneWithout${relatedFieldName}Input`;
+  //   typesRegistry.set(
+  //     `${r.field.type}CreateNestedOneWithout${relatedFieldName}Input`,
+  //     `
+  //   interface ${basetypeName} {
+  //     create?: XOR<
+  //     ${r.field.type}CreateWithout${relatedFieldName}Input,
+  //     Prisma.${r.field.type}UncheckedCreateWithout${relatedFieldName}Input
+  //     >;
+  //     connectOrCreate?: ${r.field.type}CreateOrConnectWithout${relatedFieldName}Input;
+  //     connect?: Prisma.${r.field.type}WhereUniqueInput;
+  //   };
+  // `
+  //   );
+  //   typesRegistry.set(
+  //     `${r.field.type}CreateOrConnectWithout${relatedFieldName}Input`,
+  //     `
+  //       interface ${r.field.type}CreateOrConnectWithout${relatedFieldName}Input {
+  //         where: Prisma.${r.field.type}WhereUniqueInput;
+  //         create: XOR<
+  //         ${r.field.type}CreateWithout${relatedFieldName}Input,
+  //         Prisma.${r.field.type}UncheckedCreateWithout${relatedFieldName}Input
+  //         >;
+  //       }
+  //     `
+  //   );
+
+  //   return basetypeName;
 };
 
 const getModelCreateInputType =

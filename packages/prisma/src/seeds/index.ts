@@ -24,93 +24,25 @@ interface Quantity {
   max?: number;
 }
 
-interface ProfileCreateNestedOneWithoutUserInput {
-  create?: XOR<
-    ProfileCreateWithoutUserInput,
-    Prisma.ProfileUncheckedCreateWithoutUserInput
-  >;
-  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
-  connect?: Prisma.ProfileWhereUniqueInput;
-}
-
-interface ProfileCreateOrConnectWithoutUserInput {
-  where: Prisma.ProfileWhereUniqueInput;
-  create: XOR<
-    ProfileCreateWithoutUserInput,
-    Prisma.ProfileUncheckedCreateWithoutUserInput
-  >;
-}
-
-interface UserCreateNestedOneWithoutPredecessorInput {
-  create?: XOR<
-    UserCreateWithoutPredecessorInput,
-    Prisma.UserUncheckedCreateWithoutPredecessorInput
-  >;
-  connectOrCreate?: UserCreateOrConnectWithoutPredecessorInput;
-  connect?: Prisma.UserWhereUniqueInput;
-}
-
-interface UserCreateOrConnectWithoutPredecessorInput {
-  where: Prisma.UserWhereUniqueInput;
-  create: XOR<
-    UserCreateWithoutPredecessorInput,
-    Prisma.UserUncheckedCreateWithoutPredecessorInput
-  >;
-}
-
-interface UserCreateNestedOneWithoutStudentsInput {
-  create?: XOR<
-    UserCreateWithoutStudentsInput,
-    Prisma.UserUncheckedCreateWithoutStudentsInput
-  >;
-  connectOrCreate?: UserCreateOrConnectWithoutStudentsInput;
-  connect?: Prisma.UserWhereUniqueInput;
-}
-
-interface UserCreateOrConnectWithoutStudentsInput {
-  where: Prisma.UserWhereUniqueInput;
-  create: XOR<
-    UserCreateWithoutStudentsInput,
-    Prisma.UserUncheckedCreateWithoutStudentsInput
-  >;
-}
-
 type UserCreateWithoutPredecessorInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutPredecessorInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
 };
 
-interface UserCreateNestedOneWithoutSuccessorInput {
-  create?: XOR<
-    UserCreateWithoutSuccessorInput,
-    Prisma.UserUncheckedCreateWithoutSuccessorInput
-  >;
-  connectOrCreate?: UserCreateOrConnectWithoutSuccessorInput;
-  connect?: Prisma.UserWhereUniqueInput;
-}
-
-interface UserCreateOrConnectWithoutSuccessorInput {
-  where: Prisma.UserWhereUniqueInput;
-  create: XOR<
-    UserCreateWithoutSuccessorInput,
-    Prisma.UserUncheckedCreateWithoutSuccessorInput
-  >;
-}
-
 type UserCreateWithoutSuccessorInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutSuccessorInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
@@ -120,10 +52,10 @@ type UserCreateWithoutStudentsInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutStudentsInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
 };
@@ -132,9 +64,9 @@ type UserCreateWithoutTeacherInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutTeacherInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
@@ -144,10 +76,10 @@ type UserCreateWithoutFollowingInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutFollowingInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
 };
@@ -156,10 +88,10 @@ type UserCreateWithoutFollowedByInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutFollowedByInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
 };
@@ -168,9 +100,9 @@ type UserCreateWithoutProfileInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutProfileInput>
 > & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
@@ -179,10 +111,10 @@ type UserCreateWithoutProfileInput = Partial<
 type UserCreateWithoutPostsInput = Partial<
   RemoveRelationFields<Prisma.UserCreateWithoutPostsInput>
 > & {
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
@@ -192,47 +124,13 @@ type ProfileCreateWithoutUserInput = Partial<
   RemoveRelationFields<Prisma.ProfileCreateWithoutUserInput>
 >;
 
-interface UserCreateNestedOneWithoutProfileInput {
-  create?: XOR<
-    UserCreateWithoutProfileInput,
-    Prisma.UserUncheckedCreateWithoutProfileInput
-  >;
-  connectOrCreate?: UserCreateOrConnectWithoutProfileInput;
-  connect?: Prisma.UserWhereUniqueInput;
-}
-
-interface UserCreateOrConnectWithoutProfileInput {
-  where: Prisma.UserWhereUniqueInput;
-  create: XOR<
-    UserCreateWithoutProfileInput,
-    Prisma.UserUncheckedCreateWithoutProfileInput
-  >;
-}
-
 type PostCreateWithoutAuthorInput = Partial<
   RemoveRelationFields<Prisma.PostCreateWithoutAuthorInput>
 > & { categories?: CategoryMap<"CategoryCreateWithoutPostsInput"> };
 
-interface UserCreateNestedOneWithoutPostsInput {
-  create?: XOR<
-    UserCreateWithoutPostsInput,
-    Prisma.UserUncheckedCreateWithoutPostsInput
-  >;
-  connectOrCreate?: UserCreateOrConnectWithoutPostsInput;
-  connect?: Prisma.UserWhereUniqueInput;
-}
-
-interface UserCreateOrConnectWithoutPostsInput {
-  where: Prisma.UserWhereUniqueInput;
-  create: XOR<
-    UserCreateWithoutPostsInput,
-    Prisma.UserUncheckedCreateWithoutPostsInput
-  >;
-}
-
 type PostCreateWithoutCategoriesInput = Partial<
   RemoveRelationFields<Prisma.PostCreateWithoutCategoriesInput>
-> & { author?: UserCreateNestedOneWithoutPostsInput };
+> & { author?: UserCreateWithoutPostsInput };
 
 type CategoryCreateWithoutPostsInput = Partial<
   RemoveRelationFields<Prisma.CategoryCreateWithoutPostsInput>
@@ -240,10 +138,10 @@ type CategoryCreateWithoutPostsInput = Partial<
 
 type UserCreateInput = Partial<RemoveRelationFields<Prisma.UserCreateInput>> & {
   posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: UserCreateNestedOneWithoutStudentsInput;
+  profile?: ProfileCreateWithoutUserInput;
+  successor?: UserCreateWithoutPredecessorInput;
+  predecessor?: UserCreateWithoutSuccessorInput;
+  teacher?: UserCreateWithoutStudentsInput;
   students?: UserMap<"UserCreateWithoutTeacherInput">;
   followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
@@ -269,7 +167,7 @@ type UserMap<T extends UserFactoryType = "UserCreateInput"> = Quantity & {
 
 type ProfileCreateInput = Partial<
   RemoveRelationFields<Prisma.ProfileCreateInput>
-> & { user?: UserCreateNestedOneWithoutProfileInput };
+> & { user?: UserCreateWithoutProfileInput };
 
 interface ProfileFactory {
   ProfileCreateInput: ProfileCreateInput;
@@ -284,7 +182,7 @@ type ProfileMap<T extends ProfileFactoryType = "ProfileCreateInput"> =
   };
 
 type PostCreateInput = Partial<RemoveRelationFields<Prisma.PostCreateInput>> & {
-  author?: UserCreateNestedOneWithoutPostsInput;
+  author?: UserCreateWithoutPostsInput;
   categories?: CategoryMap<"CategoryCreateWithoutPostsInput">;
 };
 
@@ -328,6 +226,9 @@ seed({
   User: {
     amount: 10,
     create: () => ({
+      profile: {
+        bio: "blablablaaa",
+      },
       followedBy: {
         create: () => ({
           amount: 3,
