@@ -56,6 +56,41 @@ type Model = DMMF.Model & {
   }[];
 };
 
+//TODO: generate those types from a single relation field
+/**
+type ProfileCreateWithoutUserInput = Prisma.ProfileCreateWithoutUserInput;
+
+type ProfileUncheckedCreateWithoutUserInput =
+  Prisma.ProfileUncheckedCreateWithoutUserInput;
+
+interface ProfileCreateOrConnectWithoutUserInput {
+  where: Prisma.ProfileWhereUniqueInput;
+  create: XOR<
+    ProfileCreateWithoutUserInput,
+    ProfileUncheckedCreateWithoutUserInput
+  >;
+}
+
+interface ProfileCreateNestedOneWithoutUserInput {
+  create?: XOR<
+    ProfileCreateWithoutUserInput,
+    ProfileUncheckedCreateWithoutUserInput
+  >;
+  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
+  connect?: Prisma.ProfileWhereUniqueInput;
+}
+
+type UserCreateInput = Partial<RemoveRelationFields<Prisma.UserCreateInput>> & {
+  posts?: PostMap<"PostCreateWithoutAuthorInput">;
+  profile?: ProfileCreateNestedOneWithoutUserInput;
+  successor?: Prisma.UserCreateNestedOneWithoutPredecessorInput;
+  predecessor?: Prisma.UserCreateNestedOneWithoutSuccessorInput;
+  teacher?: Prisma.UserCreateNestedOneWithoutStudentsInput;
+  students?: UserMap<"UserCreateWithoutTeacherInput">;
+  followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
+  following?: UserMap<"UserCreateWithoutFollowedByInput">;
+};
+ */
 const getModelCreateInputFieldType = (r: Model["relationFields"][number]) => {
   const typeName = `${r.field.type}CreateNestedOneWithout${capitalize(
     r.relatedField.name

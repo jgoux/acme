@@ -138,11 +138,11 @@ seed({
     create: () => ({
       email: "hey@foo.com",
       profile: {
-        create: {
-          bio: "biobiobio",
-        },
+        bio: "biobiobio",
       },
       posts: {
+        max: 10,
+        min: 2,
         create: () => ({
           title: "post title",
         }),
