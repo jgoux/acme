@@ -91,47 +91,125 @@ type UserCreateInput = Partial<RemoveRelationFields<Prisma.UserCreateInput>> & {
   following?: UserMap<"UserCreateWithoutFollowedByInput">;
 };
  */
-const getModelCreateInputFieldType = (r: Model["relationFields"][number]) => {
-  const typeName = `${r.field.type}CreateNestedOneWithout${capitalize(
-    r.relatedField.name
-  )}Input`;
-  return `Prisma.${typeName}`;
+const getModelCreateInputFieldType = ({
+  relationFields: r,
+  typesRegistry,
+}: {
+  typesRegistry: Map<string, string>;
+  relationFields: Model["relationFields"][number];
+}) => {
+  // <FieldType>CreateNestedOneWithout<RelatedFielName>Input
+  const relatedFieldName = capitalize(r.relatedField.name);
+  const basetypeName = `${r.field.type}CreateNestedOneWithout${relatedFieldName}Input`;
+  typesRegistry.set(
+    `${r.field.type}CreateNestedOneWithout${relatedFieldName}Input`,
+    `
+  interface ${basetypeName} {
+    create?: XOR<
+    ${r.field.type}CreateWithout${relatedFieldName}Input,
+    Prisma.${r.field.type}UncheckedCreateWithout${relatedFieldName}Input
+    >;
+    connectOrCreate?: ${r.field.type}CreateOrConnectWithout${relatedFieldName}Input;
+    connect?: Prisma.${r.field.type}WhereUniqueInput;
+  };
+`
+  );
+  typesRegistry.set(
+    `${r.field.type}CreateOrConnectWithout${relatedFieldName}Input`,
+    `
+      interface ${r.field.type}CreateOrConnectWithout${relatedFieldName}Input {
+        where: Prisma.${r.field.type}WhereUniqueInput;
+        create: XOR<
+        ${r.field.type}CreateWithout${relatedFieldName}Input,
+        Prisma.${r.field.type}UncheckedCreateWithout${relatedFieldName}Input
+        >;
+      }
+    `
+  );
+
+  return basetypeName;
 };
 
-const getModelCreateInputType = (model: Model) => {
-  const baseType = `type ${model.name}CreateInput = Partial<RemoveRelationFields<Prisma.${model.name}CreateInput>>`;
-  const fields = model.relationFields
-    .map((r) => {
-      const mapParam = `${r.field.type}CreateWithout${capitalize(
-        r.relatedField.name
-      )}Input`;
-      const value = r.field.isList
-        ? `${r.field.type}Map<"${mapParam}">`
-        : getModelCreateInputFieldType(r);
+const getModelCreateInputType =
+  (typesRegistry: Map<string, string>) => (model: Model) => {
+    const baseType = `type ${model.name}CreateInput = Partial<RemoveRelationFields<Prisma.${model.name}CreateInput>>`;
 
-      return `${r.field.name}?: ${value};`;
-    })
-    .join("\n");
+    const fields = model.relationFields
+      .map((r) => {
+        const mapParam = `${r.field.type}CreateWithout${capitalize(
+          r.relatedField.name
+        )}Input`;
+        const value = r.field.isList
+          ? `${r.field.type}Map<"${mapParam}">`
+          : getModelCreateInputFieldType({
+              typesRegistry,
+              relationFields: r,
+            });
 
-  return `${baseType} & { ${fields} };`;
-};
+        return `${r.field.name}?: ${value};`;
+      })
+      .join("\n");
 
-const getFactoryFields = (models: Model[]) => (model: Model) => {
-  const typeName = `${model.name}CreateInput`;
-  const baseType = `${typeName}: ${typeName};`;
-  const relationKeys = models
-    .flatMap((model) => model.relationFields)
-    .filter((r) => r.field.type === model.name)
-    .map((r) => {
-      const typeName = `${capitalize(model.name)}CreateWithout${capitalize(
-        r.relatedField.name
-      )}Input`;
-      const baseType = `${typeName}?: RemoveRelationFields<Prisma.${typeName}>;`;
-      return baseType;
-    });
+    return `${baseType} & { ${fields} };`;
+  };
 
-  return [baseType, ...relationKeys].join("\n");
-};
+const getModelCreateInputWithoutType =
+  (typesRegistry: Map<string, string>) =>
+  ({ model, relatedField }: { model: Model; relatedField: DMMF.Field }) => {
+    const typeName = `${model.name}CreateWithout${capitalize(
+      relatedField.name
+    )}Input`;
+    const baseType = `type ${typeName} = Partial<RemoveRelationFields<Prisma.${typeName}>>`;
+
+    const filteredFields = model.relationFields.filter(
+      (r) => r.field.name !== relatedField.name
+    );
+
+    if (filteredFields.length === 0) {
+      typesRegistry.set(typeName, `${baseType};`);
+      return;
+    }
+
+    const fields = filteredFields
+      .map((r) => {
+        const mapParam = `${r.field.type}CreateWithout${capitalize(
+          r.relatedField.name
+        )}Input`;
+        const value = r.field.isList
+          ? `${r.field.type}Map<"${mapParam}">`
+          : getModelCreateInputFieldType({
+              typesRegistry,
+              relationFields: r,
+            });
+
+        return `${r.field.name}?: ${value};`;
+      })
+      .join("\n");
+
+    typesRegistry.set(typeName, `${baseType} & { ${fields} };`);
+  };
+
+const getFactoryFields =
+  (models: Model[], typesRegistry: Map<string, string>) => (model: Model) => {
+    const typeName = `${model.name}CreateInput`;
+    const baseType = `${typeName}: ${typeName};`;
+    const relationKeys = models
+      .flatMap((model) => model.relationFields)
+      .filter((r) => r.field.type === model.name)
+      .map((r) => {
+        const typeName = `${capitalize(model.name)}CreateWithout${capitalize(
+          r.relatedField.name
+        )}Input`;
+        const baseType = `${typeName}?: ${typeName};`;
+        getModelCreateInputWithoutType(typesRegistry)({
+          model,
+          relatedField: r.relatedField,
+        });
+        return baseType;
+      });
+
+    return [baseType, ...relationKeys].join("\n");
+  };
 
 const generateModelsTypes = (ctx: Context) => {
   const { dmmf } = ctx;
@@ -162,9 +240,10 @@ const generateModelsTypes = (ctx: Context) => {
     }
   `;
   const models = dmmf.datamodel.models.map(getModelRelations(ctx));
+  const typesRegistry = new Map<string, string>();
   const seedTypes = models.map((model) => {
-    const factoryFields = getFactoryFields(models)(model);
-    const modelCreateInputType = getModelCreateInputType(model);
+    const factoryFields = getFactoryFields(models, typesRegistry)(model);
+    const modelCreateInputType = getModelCreateInputType(typesRegistry)(model);
     const factory = `type ${model.name}Factory = { ${factoryFields} }`;
     const factoryType = `type ${model.name}FactoryType = keyof ${model.name}Factory;`;
     const modelMap = `
@@ -174,7 +253,11 @@ const generateModelsTypes = (ctx: Context) => {
     return [modelCreateInputType, factory, factoryType, modelMap].join("\n\n");
   });
 
-  console.log([utilityTypes, quantityType, ...seedTypes].join("\n\n"));
+  console.log(
+    [utilityTypes, quantityType, ...typesRegistry.values(), ...seedTypes].join(
+      "\n\n"
+    )
+  );
 
   const seedMapFields = models
     .map((model) => `${model.name}?: ${model.name}Map;`)
