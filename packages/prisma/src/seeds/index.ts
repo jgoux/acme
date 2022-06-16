@@ -1,4 +1,6 @@
+import type { Faker } from "@faker-js/faker";
 import type { Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
 
@@ -220,9 +222,50 @@ interface SeedMap {
   Category?: CategoryMap;
 }
 
-const seed = (seedMap: SeedMap) => Promise<void>;
+type Entries<T> = {
+  [K in keyof T]-?: [K, NonNullable<T[K]>];
+}[keyof T][];
 
-seed({
+interface SeedConfig {
+  prisma: PrismaClient;
+  faker?: Faker;
+  factories?: (faker: Faker) => {
+    User?: Partial<RemoveRelationFields<Prisma.UserCreateInput>>;
+    Profile?: Partial<RemoveRelationFields<Prisma.ProfileCreateInput>>;
+    Post?: Partial<RemoveRelationFields<Prisma.PostCreateInput>>;
+    Category?: Partial<RemoveRelationFields<Prisma.CategoryCreateInput>>;
+  };
+}
+type CreateSeed = (config: SeedConfig) => (seedMap: SeedMap) => Promise<void>;
+
+const createSeed: CreateSeed =
+  ({ prisma }) =>
+  async (seedMap) => {
+    const modelEntries = Object.entries(seedMap) as Entries<SeedMap>;
+    const modelsSeedInputs = modelEntries.flatMap(([modelName, modelMap]) => {
+      return [modelName, modelMap] as Entries<SeedMap>;
+    });
+
+    await prisma.$transaction(
+      modelsSeedInputs.map(([modelName, modelMap]) =>
+        // @ts-expect-error at this point we're too dynamic to care about the types
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        prisma[modelName.toLowerCase()].createMany(modelMap)
+      )
+    );
+  };
+
+const seed = createSeed({
+  prisma: new PrismaClient(),
+  factories: (faker) => ({
+    User: {
+      name: faker.name.findName(),
+      email: faker.internet.email(),
+    },
+  }),
+});
+
+void seed({
   User: {
     amount: 10,
     create: () => ({
