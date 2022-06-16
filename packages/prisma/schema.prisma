@@ -31,6 +31,14 @@ model User {
   role    Role     @default(USER)
   posts   Post[]
   profile Profile?
+  successorId Int?
+  successor   User?   @relation("BlogOwnerHistory", fields: [successorId], references: [id])
+  predecessor User?   @relation("BlogOwnerHistory")
+  teacherId Int?
+  teacher   User?   @relation("TeacherStudents", fields: [teacherId], references: [id])
+  students  User[]  @relation("TeacherStudents")
+  followedBy User[]  @relation("UserFollows", references: [id])
+  following  User[]  @relation("UserFollows", references: [id])
 }
 
 model Profile {

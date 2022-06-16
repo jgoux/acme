@@ -1,37 +1,23 @@
 import type { DMMF } from "@prisma/generator-helper";
 import type { SourceFile } from "ts-morph";
 
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 interface GenerateSeedOptions {
   client: string;
 }
 
-function addImports(
-  sourceFile: SourceFile,
-  dmmf: DMMF.Document,
-  options: GenerateSeedOptions
-) {
-  const modelNames = dmmf.datamodel.models.map((m) => m.name);
-  const prismaImports = ["Prisma"].concat(modelNames);
+interface Context {
+  sourceFile: SourceFile;
+  dmmf: DMMF.Document;
+  options: GenerateSeedOptions;
+}
+
+function addImports(ctx: Context) {
+  const { sourceFile, options } = ctx;
+  const prismaImports = ["Prisma"];
 
   sourceFile.addImportDeclarations([
-    // {
-    //   moduleSpecifier: "prisma-factory",
-    //   namedImports: [
-    //     "CreateFactoryOptions",
-    //     "CreateFactoryHooks",
-    //     "CreateFactoryReturn",
-    //   ],
-    //   isTypeOnly: true,
-    // },
-    // {
-    //   moduleSpecifier: "prisma-factory",
-    //   namedImports: ["ObjectWithMaybeCallbacks"],
-    //   isTypeOnly: true,
-    // },
-    // {
-    //   moduleSpecifier: "prisma-factory",
-    //   namedImports: ["createFactory"],
-    // },
     {
       moduleSpecifier: options.client,
       namedImports: prismaImports,
@@ -39,10 +25,135 @@ function addImports(
   ]);
 }
 
+const getModelRelations = (ctx: Context) => (model: DMMF.Model) => {
+  const relationFields = model.fields
+    .filter((f) => Boolean(f.relationName))
+    .map((modelField) => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const relatedModel = ctx.dmmf.datamodel.models.find(
+        (m) => m.name === modelField.type
+      )!;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const relatedModelField = relatedModel.fields.find(
+        (f) =>
+          f.relationName === modelField.relationName &&
+          f.name !== modelField.name
+      )!;
+
+      return { field: modelField, relatedField: relatedModelField };
+    });
+
+  return {
+    ...model,
+    relationFields,
+  };
+};
+
+type Model = DMMF.Model & {
+  relationFields: {
+    field: DMMF.Field;
+    relatedField: DMMF.Field;
+  }[];
+};
+
+const getModelCreateInputFieldType = (r: Model["relationFields"][number]) => {
+  const typeName = `${r.field.type}CreateNestedOneWithout${capitalize(
+    r.relatedField.name
+  )}Input`;
+  return `Prisma.${typeName}`;
+};
+
+const getModelCreateInputType = (model: Model) => {
+  const baseType = `type ${model.name}CreateInput = Partial<RemoveRelationFields<Prisma.${model.name}CreateInput>>`;
+  const fields = model.relationFields
+    .map((r) => {
+      const mapParam = `${r.field.type}CreateWithout${capitalize(
+        r.relatedField.name
+      )}Input`;
+      const value = r.field.isList
+        ? `${r.field.type}Map<"${mapParam}">`
+        : getModelCreateInputFieldType(r);
+
+      return `${r.field.name}?: ${value};`;
+    })
+    .join("\n");
+
+  return `${baseType} & { ${fields} };`;
+};
+
+const getFactoryFields = (models: Model[]) => (model: Model) => {
+  const typeName = `${model.name}CreateInput`;
+  const baseType = `${typeName}: ${typeName};`;
+  const relationKeys = models
+    .flatMap((model) => model.relationFields)
+    .filter((r) => r.field.type === model.name)
+    .map((r) => {
+      const typeName = `${capitalize(model.name)}CreateWithout${capitalize(
+        r.relatedField.name
+      )}Input`;
+      const baseType = `${typeName}?: RemoveRelationFields<Prisma.${typeName}>;`;
+      return baseType;
+    });
+
+  return [baseType, ...relationKeys].join("\n");
+};
+
+const generateModelsTypes = (ctx: Context) => {
+  const { dmmf } = ctx;
+  const utilityTypes = `
+    type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
+
+    type XOR<T, U> = T extends object
+      ? U extends object
+        ? (T & Without<U, T>) | (U & Without<T, U>)
+        : U
+      : T;
+
+    type RemoveRelationFields<T> = {
+      [P in keyof T as NonNullable<T[P]> extends {
+        create?: any;
+        connectOrCreate?: any;
+        connect?: any;
+      }
+        ? never
+        : P]: T[P];
+    };
+  `;
+  const quantityType = `
+    interface Quantity {
+      amount?: number;
+      min?: number;
+      max?: number;
+    }
+  `;
+  const models = dmmf.datamodel.models.map(getModelRelations(ctx));
+  const seedTypes = models.map((model) => {
+    const factoryFields = getFactoryFields(models)(model);
+    const modelCreateInputType = getModelCreateInputType(model);
+    const factory = `type ${model.name}Factory = { ${factoryFields} }`;
+    const factoryType = `type ${model.name}FactoryType = keyof ${model.name}Factory;`;
+    const modelMap = `
+      type ${model.name}Map<T extends ${model.name}FactoryType = "${model.name}CreateInput"> = Quantity & {
+        create?: (index: number) => ${model.name}Factory[T];
+      };`;
+    return [modelCreateInputType, factory, factoryType, modelMap].join("\n\n");
+  });
+
+  console.log([utilityTypes, quantityType, ...seedTypes].join("\n\n"));
+
+  const seedMapFields = models
+    .map((model) => `${model.name}?: ${model.name}Map;`)
+    .join("\n");
+  const seedMap = `type SeedMap = { ${seedMapFields} }`;
+
+  console.log(seedMap);
+};
+
 export function generateSeed(
   sourceFile: SourceFile,
   dmmf: DMMF.Document,
   options: GenerateSeedOptions
 ) {
-  addImports(sourceFile, dmmf, options);
+  addImports({ sourceFile, dmmf, options });
+  generateModelsTypes({ sourceFile, dmmf, options });
 }
