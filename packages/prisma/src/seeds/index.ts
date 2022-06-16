@@ -2,14 +2,6 @@ import type { Faker } from "@faker-js/faker";
 import type { Prisma } from "@prisma/client";
 import { PrismaClient } from "@prisma/client";
 
-type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
-
-type XOR<T, U> = T extends object
-  ? U extends object
-    ? (T & Without<U, T>) | (U & Without<T, U>)
-    : U
-  : T;
-
 type RemoveRelationFields<T> = {
   [P in keyof T as NonNullable<T[P]> extends {
     create?: any;

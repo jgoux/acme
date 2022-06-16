@@ -56,41 +56,6 @@ type Model = DMMF.Model & {
   }[];
 };
 
-//TODO: generate those types from a single relation field
-/**
-type ProfileCreateWithoutUserInput = Prisma.ProfileCreateWithoutUserInput;
-
-type ProfileUncheckedCreateWithoutUserInput =
-  Prisma.ProfileUncheckedCreateWithoutUserInput;
-
-interface ProfileCreateOrConnectWithoutUserInput {
-  where: Prisma.ProfileWhereUniqueInput;
-  create: XOR<
-    ProfileCreateWithoutUserInput,
-    ProfileUncheckedCreateWithoutUserInput
-  >;
-}
-
-interface ProfileCreateNestedOneWithoutUserInput {
-  create?: XOR<
-    ProfileCreateWithoutUserInput,
-    ProfileUncheckedCreateWithoutUserInput
-  >;
-  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
-  connect?: Prisma.ProfileWhereUniqueInput;
-}
-
-type UserCreateInput = Partial<RemoveRelationFields<Prisma.UserCreateInput>> & {
-  posts?: PostMap<"PostCreateWithoutAuthorInput">;
-  profile?: ProfileCreateNestedOneWithoutUserInput;
-  successor?: Prisma.UserCreateNestedOneWithoutPredecessorInput;
-  predecessor?: Prisma.UserCreateNestedOneWithoutSuccessorInput;
-  teacher?: Prisma.UserCreateNestedOneWithoutStudentsInput;
-  students?: UserMap<"UserCreateWithoutTeacherInput">;
-  followedBy?: UserMap<"UserCreateWithoutFollowingInput">;
-  following?: UserMap<"UserCreateWithoutFollowedByInput">;
-};
- */
 const getModelCreateInputFieldType = ({
   relationFields: r,
 }: // typesRegistry,
@@ -217,7 +182,7 @@ const getFactoryFields =
 
 const generateModelsTypes = (ctx: Context) => {
   const { dmmf } = ctx;
-  const utilityTypes = `
+  /*
     type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
 
     type XOR<T, U> = T extends object
@@ -225,7 +190,8 @@ const generateModelsTypes = (ctx: Context) => {
         ? (T & Without<U, T>) | (U & Without<T, U>)
         : U
       : T;
-
+  */
+  const utilityTypes = `
     type RemoveRelationFields<T> = {
       [P in keyof T as NonNullable<T[P]> extends {
         create?: any;
