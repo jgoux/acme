@@ -8,9 +8,17 @@ import { generateSeed } from "./generate-seed.js";
 export async function generate(options: GeneratorOptions) {
   const prismaClientOutput = options.otherGenerators.find(
     (gen) => gen.provider.value === "prisma-client-js"
-  )!.output!.value;
+  )?.output?.value;
 
-  const outputDir = parseEnvValue(options.generator.output!);
+  if (!prismaClientOutput) {
+    throw new Error("prisma-client-js output not found");
+  }
+
+  if (!options.generator.output) {
+    throw new Error("output not found");
+  }
+
+  const outputDir = parseEnvValue(options.generator.output);
 
   try {
     const project = new Project({
@@ -28,44 +36,10 @@ export async function generate(options: GeneratorOptions) {
           : path.resolve(outputDir, prismaClientOutput),
     });
 
-    await project.save();
-    await project.emit();
+    // await project.save();
+    // await project.emit();
   } catch (e) {
     console.error("Error: unable to write files for Prisma Factory");
     throw e;
   }
 }
-// seed({
-//   project: {
-//     amount: 3,
-//     factory: ({ faker, index }) => ({
-//       name: `Project ${index}`,
-//       description: faker.lorem.paragraph(10),
-//       members: {
-//         max: 15,
-//         statics: [
-//           ...(index === 3
-//             ? [
-//                 {
-//                   role: "admin",
-//                   user: {
-//                     auth0Id: "auth0|5e8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8",
-//                   },
-//                 },
-//               ]
-//             : []),
-//         ],
-//       },
-//     }),
-//   },
-// });
-
-// type FactoryMap = {
-//   [ModelName]
-// }
-
-// const createSeed = (factoryMap) => {
-//   const seed = (seedMap) => {
-//     // iterate over each table and generate an input we can give to Prisma
-//   };
-// };

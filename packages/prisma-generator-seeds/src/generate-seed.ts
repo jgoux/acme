@@ -15,12 +15,20 @@ interface Context {
 
 function addImports(ctx: Context) {
   const { sourceFile, options } = ctx;
-  const prismaImports = ["Prisma"];
-
+  const prismaImports = ["Prisma", "PrismaClient"];
+  console.log(`
+  import type { Faker } from "@faker-js/faker";
+  import type { Prisma } from "@prisma/client";
+  import { PrismaClient } from "@prisma/client";
+  `);
   sourceFile.addImportDeclarations([
     {
       moduleSpecifier: options.client,
       namedImports: prismaImports,
+    },
+    {
+      moduleSpecifier: "@faker/faker-js",
+      namedImports: ["faker"],
     },
   ]);
 }
@@ -234,7 +242,47 @@ const generateModelsTypes = (ctx: Context) => {
     .join("\n");
   const seedMap = `type SeedMap = { ${seedMapFields} }`;
 
-  console.log(seedMap);
+  const createSeedFactoriesFields = models
+    .map(
+      (model) =>
+        `${model.name}?:  Partial<RemoveRelationFields<Prisma.${model.name}CreateInput>>;`
+    )
+    .join("\n");
+
+  const createSeed = `
+  interface SeedConfig {
+    prisma: PrismaClient;
+    faker?: Faker;
+    factories?: (faker: Faker) => {
+      ${createSeedFactoriesFields}
+    };
+  }
+
+  type CreateSeed = (config: SeedConfig) => (seedMap: SeedMap) => Promise<void>;
+
+  type Entries<T> = {
+    [K in keyof T]-?: [K, NonNullable<T[K]>];
+  }[keyof T][];
+
+  export const createSeed: CreateSeed =
+    ({ prisma }) =>
+    async (seedMap) => {
+      const modelEntries = Object.entries(seedMap) as Entries<SeedMap>;
+      const modelsSeedInputs = modelEntries.flatMap(([modelName, modelMap]) => {
+        return [modelName, modelMap] as Entries<SeedMap>;
+      });
+
+      await prisma.$transaction(
+        modelsSeedInputs.map(([modelName, modelMap]) =>
+          // @ts-${"expect"}-error at this point we're too dynamic to care about the types
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+          prisma[modelName.toLowerCase()].createMany(modelMap)
+        )
+      );
+    };
+  `;
+
+  console.log([seedMap, createSeed].join("\n\n"));
 };
 
 export function generateSeed(

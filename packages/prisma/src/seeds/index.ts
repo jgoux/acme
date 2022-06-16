@@ -1,6 +1,5 @@
 import type { Faker } from "@faker-js/faker";
-import type { Prisma } from "@prisma/client";
-import { PrismaClient } from "@prisma/client";
+import type { Prisma, PrismaClient } from "@prisma/client";
 
 type RemoveRelationFields<T> = {
   [P in keyof T as NonNullable<T[P]> extends {
@@ -207,16 +206,6 @@ type CategoryMap<T extends CategoryFactoryType = "CategoryCreateInput"> =
   Quantity & {
     create?: (index: number) => CategoryFactory[T];
   };
-interface SeedMap {
-  User?: UserMap;
-  Profile?: ProfileMap;
-  Post?: PostMap;
-  Category?: CategoryMap;
-}
-
-type Entries<T> = {
-  [K in keyof T]-?: [K, NonNullable<T[K]>];
-}[keyof T][];
 
 interface SeedConfig {
   prisma: PrismaClient;
@@ -228,9 +217,14 @@ interface SeedConfig {
     Category?: Partial<RemoveRelationFields<Prisma.CategoryCreateInput>>;
   };
 }
+
 type CreateSeed = (config: SeedConfig) => (seedMap: SeedMap) => Promise<void>;
 
-const createSeed: CreateSeed =
+type Entries<T> = {
+  [K in keyof T]-?: [K, NonNullable<T[K]>];
+}[keyof T][];
+
+export const createSeed: CreateSeed =
   ({ prisma }) =>
   async (seedMap) => {
     const modelEntries = Object.entries(seedMap) as Entries<SeedMap>;
@@ -247,50 +241,9 @@ const createSeed: CreateSeed =
     );
   };
 
-const seed = createSeed({
-  prisma: new PrismaClient(),
-  factories: (faker) => ({
-    User: {
-      name: faker.name.findName(),
-      email: faker.internet.email(),
-    },
-  }),
-});
-
-void seed({
-  User: {
-    amount: 10,
-    create: () => ({
-      profile: {
-        bio: "blablablaaa",
-      },
-      followedBy: {
-        create: () => ({
-          amount: 3,
-          posts: {
-            create: (i) => ({
-              ...(i === 0 && { title: "First post" }),
-              categories: {
-                min: 3,
-                max: 10,
-              },
-            }),
-          },
-        }),
-      },
-      posts: {
-        max: 10,
-        min: 2,
-        create: () => ({
-          title: "post title",
-          categories: {
-            amount: 9,
-            create: () => ({
-              name: "yolo",
-            }),
-          },
-        }),
-      },
-    }),
-  },
-});
+interface SeedMap {
+  User?: UserMap;
+  Profile?: ProfileMap;
+  Post?: PostMap;
+  Category?: CategoryMap;
+}
