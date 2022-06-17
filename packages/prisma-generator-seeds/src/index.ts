@@ -1,7 +1,7 @@
 import { generatorHandler } from "@prisma/generator-helper";
 
 import { version } from "../package.json";
-import { generate } from "./generate.js";
+import { generate } from "./generate/index.js";
 
 generatorHandler({
   onManifest() {
