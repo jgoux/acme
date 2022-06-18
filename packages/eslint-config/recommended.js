@@ -47,6 +47,7 @@ module.exports = {
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "unicorn/prefer-module": "error",
