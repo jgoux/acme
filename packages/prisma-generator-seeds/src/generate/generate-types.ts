@@ -174,6 +174,9 @@ function generateSeedMap(ctx: Context, models: Model[]) {
       ${seedMapFields.join("\n")}
     };
   `);
+  ctx.sourceFile.addStatements(`
+    type ModelName = keyof SeedMap;
+  `);
 }
 
 export function generateTypes(ctx: Context, models: Model[]) {

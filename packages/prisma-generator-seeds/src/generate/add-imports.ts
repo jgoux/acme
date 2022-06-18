@@ -5,6 +5,7 @@ export function addImports(ctx: Context) {
 
   sourceFile.addStatements(`
     import type { Faker } from "@faker-js/faker"
-    import type { Prisma, PrismaClient } from "@prisma/client";
+    import type { PrismaClient } from "@prisma/client";
+    import { Prisma } from "@prisma/client"
   `);
 }
