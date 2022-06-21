@@ -24,13 +24,13 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/scripts": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@faker-js/faker": "7.2.0",
+    "@faker-js/faker": "7.3.0",
     "@types/yargs": "17.0.10"
   },
   "dependencies": {
     "@acme/api": "workspace:*",
-    "@trpc/client": "10.0.0-alpha.25",
-    "@trpc/server": "10.0.0-alpha.25",
+    "@trpc/client": "10.0.0-alpha.29",
+    "@trpc/server": "10.0.0-alpha.29",
     "cli-testing-library": "1.0.4",
     "node-fetch": "3.2.6",
     "yargs": "17.5.1"

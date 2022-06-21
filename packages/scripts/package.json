@@ -31,7 +31,7 @@
     "rimraf": "3.0.2",
     "tsup": "6.1.2",
     "typescript": "4.7.4",
-    "vitest": "0.15.1"
+    "vitest": "0.15.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
