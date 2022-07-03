@@ -41,14 +41,14 @@ importers:
       '@trpc/client': 10.0.0-alpha.29
       '@trpc/server': 10.0.0-alpha.29
       '@types/yargs': 17.0.10
-      cli-testing-library: 1.0.4
+      cli-testing-library: 2.0.0
       node-fetch: 3.2.6
       yargs: 17.5.1
     dependencies:
       '@acme/api': link:../api
       '@trpc/client': 10.0.0-alpha.29_n7tkqfgs3jmhsrzqk4bgwd3vou
       '@trpc/server': 10.0.0-alpha.29
-      cli-testing-library: 1.0.4
+      cli-testing-library: 2.0.0
       node-fetch: 3.2.6
       yargs: 17.5.1
     devDependencies:
@@ -1165,8 +1165,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /cli-testing-library/1.0.4:
-    resolution: {integrity: sha512-hwswlcT/4ZtzisPK6LQ21bw0HAL7r0AGUv3VjiQyanCO75sGBq3LZ6SXZwxR2KUmVk9/aUTw/6EvVTwToAL/bA==}
+  /cli-testing-library/2.0.0:
+    resolution: {integrity: sha512-xjJNyR4G/DkhCSSzvNMURpZ80AaoPW5b3O8xDxh8uzOF4WLdgY38hlJjt3o8TgWri9fFOwXA1Gc1akapWEiTgA==}
     engines: {node: '>=12'}
     dependencies:
       '@babel/code-frame': 7.16.7

@@ -31,7 +31,7 @@
     "@acme/api": "workspace:*",
     "@trpc/client": "10.0.0-alpha.29",
     "@trpc/server": "10.0.0-alpha.29",
-    "cli-testing-library": "1.0.4",
+    "cli-testing-library": "2.0.0",
     "node-fetch": "3.2.6",
     "yargs": "17.5.1"
   }
