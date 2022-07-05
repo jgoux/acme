@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "@types/eslint": "8.4.3",
-    "eslint-plugin-unicorn": "42.0.0"
+    "eslint-plugin-unicorn": "43.0.0"
   }
 }
