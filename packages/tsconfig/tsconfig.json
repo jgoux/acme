@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "@tsconfig/strictest",
+    "@tsconfig/node-lts"
+  ],
+  "compilerOptions": {
+    "checkJs": false,
+    "composite": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "customConditions": [
+      "development"
+    ],
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@snaplet/tsconfig",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./tsconfig.json"
+  },
+  "dependencies": {
+    "@tsconfig/node-lts": "18.12.5",
+    "@tsconfig/strictest": "2.0.2"
+  }
+}

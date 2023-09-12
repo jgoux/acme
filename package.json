@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@snaplet/eslint-config": "workspace:*",
+    "@snaplet/tsconfig": "workspace:*",
+    "knip": "2.24.0",
+    "turbo": "1.10.13",
+    "typescript": "5.2.2",
+    "vitest": "0.34.4"
+  },
+  "scripts": {
+    "type-check": "tsc --build",
+    "lint": "turbo run lint",
+    "knip": "knip",
+    "snaplet": "pnpm --filter snaplet run start --",
+    "upgrade-deps": "pnpm upgrade --interactive --recursive --latest"
+  },
+  "packageManager": "pnpm@8.7.5"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "snaplet",
+  "type": "module",
+  "version": "1.0.0",
+  "imports": {
+    "#*": "./src/*"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "dependencies": {
+    "@snaplet/sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "@snaplet/eslint-config": "workspace:*",
+    "@snaplet/tsconfig": "workspace:*",
+    "@total-typescript/ts-reset": "0.5.1",
+    "@types/node": "18.17.15",
+    "eslint": "8.49.0",
+    "tsx": "3.12.9",
+    "typescript": "5.2.2"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx --conditions development src/index.ts",
+    "build": "tsc --build tsconfig.build.json",
+    "lint": "eslint --cache .",
+    "type-check": "tsc --build"
+  }
+}
