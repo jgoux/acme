@@ -15,8 +15,8 @@
   "scripts": {
     "type-check": "tsc --build",
     "lint": "turbo run lint",
-    "knip": "knip",
-    "snaplet": "pnpm --filter snaplet run start --",
+    "lint-monorepo": "knip",
+    "snaplet": "pnpm --filter snaplet run dev --",
     "upgrade-deps": "pnpm upgrade --interactive --recursive --latest"
   },
   "packageManager": "pnpm@8.7.5"
