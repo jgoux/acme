@@ -1,3 +1,3 @@
-import config from "@snaplet/eslint-config";
+import config from "@acme/eslint-config";
 
 export default config;

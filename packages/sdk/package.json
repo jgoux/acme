@@ -1,5 +1,5 @@
 {
-  "name": "@snaplet/sdk",
+  "name": "@acme/sdk",
   "type": "module",
   "version": "1.0.0",
   "imports": {
@@ -12,8 +12,8 @@
     }
   },
   "devDependencies": {
-    "@snaplet/eslint-config": "workspace:*",
-    "@snaplet/tsconfig": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "18.17.15",
     "eslint": "8.49.0",

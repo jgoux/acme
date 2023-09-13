@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@snaplet/eslint-config": "workspace:*",
-    "@snaplet/tsconfig": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "knip": "2.24.0",
     "turbo": "1.10.13",
     "typescript": "5.2.2",
@@ -16,7 +16,7 @@
     "type-check": "tsc --build",
     "lint": "turbo run lint",
     "lint-monorepo": "knip",
-    "snaplet": "pnpm --filter snaplet run dev --",
+    "acme": "pnpm --filter acme run dev --",
     "update-deps": "pnpm update \"\\!@types/node\" --interactive --recursive --latest"
   },
   "packageManager": "pnpm@8.7.5"

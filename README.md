@@ -2,8 +2,10 @@
 
 Opiniated TypeScript monorepo architecture including:
 
-- Type-checking (TypeScript)
-- Lint (ESLint)
-- Format (Prettier)
-- Task runner (Turborepo)
-- Monorepo lint (Knip)
+- [x] Type-checking (TypeScript)
+- [x] Lint (ESLint)
+- [x] Format (Prettier)
+- [x] Task runner (Turborepo)
+- [x] Monorepo lint (Knip)
+- [x] Unit/Integration tests (Vitest)
+- [ ] E2E tests (Playwright)

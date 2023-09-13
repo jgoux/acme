@@ -1,4 +1,4 @@
-import { hello } from "@snaplet/sdk";
+import { hello } from "@acme/sdk";
 import { parseArgs } from "node:util";
 
 const { positionals } = parseArgs({

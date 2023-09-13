@@ -8,10 +8,10 @@ importers:
 
   .:
     devDependencies:
-      '@snaplet/eslint-config':
+      '@acme/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
-      '@snaplet/tsconfig':
+      '@acme/tsconfig':
         specifier: workspace:*
         version: link:packages/tsconfig
       knip:
@@ -29,14 +29,14 @@ importers:
 
   packages/cli:
     dependencies:
-      '@snaplet/sdk':
+      '@acme/sdk':
         specifier: workspace:*
         version: link:../sdk
     devDependencies:
-      '@snaplet/eslint-config':
+      '@acme/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@snaplet/tsconfig':
+      '@acme/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@total-typescript/ts-reset':
@@ -99,10 +99,10 @@ importers:
 
   packages/sdk:
     devDependencies:
-      '@snaplet/eslint-config':
+      '@acme/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@snaplet/tsconfig':
+      '@acme/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@total-typescript/ts-reset':
