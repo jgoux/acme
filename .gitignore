@@ -168,8 +168,18 @@ dist
 .yarn/install-state.gz
 .pnp.\*
 
-# types
-.dts
+# Turborepo task cache
 .turbo
-.eslintcache
 
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+# Types for VS Code
+.dts

@@ -123,9 +123,9 @@ importers:
 
   packages/tsconfig:
     dependencies:
-      '@tsconfig/node-lts':
-        specifier: 18.12.5
-        version: 18.12.5
+      '@tsconfig/node18':
+        specifier: 18.2.2
+        version: 18.2.2
       '@tsconfig/strictest':
         specifier: 2.0.2
         version: 2.0.2
@@ -523,8 +523,8 @@ packages:
     resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
     dev: true
 
-  /@tsconfig/node-lts@18.12.5:
-    resolution: {integrity: sha512-KJZX0kQ5FBv77WDVzmQ9y1dUjaJCNXAAz3LSsg5cMwH0AUijVdDQtII+IVprEXdb13U9GjVOBxBzyRvr/ozPxw==}
+  /@tsconfig/node18@18.2.2:
+    resolution: {integrity: sha512-d6McJeGsuoRlwWZmVIeE8CUA27lu6jLjvv1JzqmpsytOYYbVi1tHZEnwCNVOXnj4pyLvneZlFlpXUK+X9wBWyw==}
     dev: false
 
   /@tsconfig/strictest@2.0.2:

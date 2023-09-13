@@ -6,7 +6,7 @@
     ".": "./tsconfig.json"
   },
   "dependencies": {
-    "@tsconfig/node-lts": "18.12.5",
+    "@tsconfig/node18": "18.2.2",
     "@tsconfig/strictest": "2.0.2"
   }
 }

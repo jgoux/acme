@@ -1,7 +1,7 @@
 {
   "extends": [
     "@tsconfig/strictest",
-    "@tsconfig/node-lts"
+    "@tsconfig/node18"
   ],
   "compilerOptions": {
     "checkJs": false,
