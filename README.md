@@ -2,7 +2,7 @@
 
 Pre-requisites:
 
-- Have [devenv](https://devenv.sh/getting-started/) installed (+ [direnv](https://devenv.sh/automatic-shell-activation/) for a totally smooth experience)
+- Install [devenv](https://devenv.sh/getting-started/) and [direnv](https://devenv.sh/automatic-shell-activation/)
 
 Opiniated TypeScript monorepo architecture including:
 
