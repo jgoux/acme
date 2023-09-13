@@ -27,18 +27,18 @@ importers:
         specifier: 0.34.4
         version: 0.34.4
 
-  packages/cli:
+  apps/cli:
     dependencies:
       '@acme/sdk':
         specifier: workspace:*
-        version: link:../sdk
+        version: link:../../packages/sdk
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
-        version: link:../eslint-config
+        version: link:../../packages/eslint-config
       '@acme/tsconfig':
         specifier: workspace:*
-        version: link:../tsconfig
+        version: link:../../packages/tsconfig
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1

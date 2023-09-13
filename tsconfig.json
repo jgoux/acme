@@ -5,7 +5,7 @@
   },
   "references": [
     {
-      "path": "./packages/cli"
+      "path": "./apps/cli"
     },
     {
       "path": "./packages/sdk"

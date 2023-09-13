@@ -5,6 +5,9 @@ const config: KnipConfig = {
     ".": {
       entry: ["*.(js|ts)"],
     },
+    "apps/*": {
+      entry: ["*.(js|ts)", "src/index.ts"],
+    },
     "packages/*": {
       entry: ["*.(js|ts)", "src/index.ts"],
     },
