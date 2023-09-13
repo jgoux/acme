@@ -1,5 +1,9 @@
 # Acme Monorepo
 
+Pre-requisites:
+
+- Have [devenv](https://devenv.sh/getting-started/) installed (+ [direnv](https://devenv.sh/automatic-shell-activation/) for a totally smooth experience)
+
 Opiniated TypeScript monorepo architecture including:
 
 - [x] Stable system dependencies (Nix/Devenv)
