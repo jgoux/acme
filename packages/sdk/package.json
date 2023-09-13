@@ -3,7 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "imports": {
-    "#*": "./src/*"
+    "#*": "./src/*",
+    "#test": "./test/index.js"
   },
   "exports": {
     ".": {
