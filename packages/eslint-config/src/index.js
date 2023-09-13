@@ -65,6 +65,7 @@ export default [
         "newlines-between": "never",
         "internal-pattern": ["#*", "#*/**"],
       }],
+      "perfectionist/sort-objects": "off",
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": ["error", { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }],
       ...prettierConfig.rules,
