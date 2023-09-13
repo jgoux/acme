@@ -16,6 +16,7 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "lint-monorepo": "knip",
+    "test": "turbo run test",
     "type-check": "tsc --build",
     "update-deps": "pnpm update \"\\!@types/node\" --interactive --recursive --latest"
   },
