@@ -1,10 +1,11 @@
-import { hello } from "@acme/sdk";
-import { parseArgs } from "node:util";
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
+import { helloCommand } from "./commands/hello/hello.js";
+import { subCommand } from "./commands/sub/sub.js";
 
-const { positionals } = parseArgs({
-  allowPositionals: true,
-});
+const program = yargs(hideBin(process.argv)).scriptName("acme");
 
-const [name] = positionals;
+helloCommand(program);
+subCommand(program);
 
-console.log(hello(name ?? "world"));
+await program.parse();

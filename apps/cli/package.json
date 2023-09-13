@@ -10,13 +10,15 @@
     ".": "./dist/index.js"
   },
   "dependencies": {
-    "@acme/sdk": "workspace:*"
+    "@acme/sdk": "workspace:*",
+    "yargs": "17.7.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "18.17.15",
+    "@types/yargs": "17.0.24",
     "eslint": "8.49.0",
     "execa": "8.0.1",
     "tsx": "3.12.9",

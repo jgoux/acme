@@ -1,10 +1,19 @@
-import { hello } from "@acme/sdk";
-import { parseArgs } from "node:util";
+import { type Argv } from "yargs";
 
-const { positionals } = parseArgs({
-  allowPositionals: true,
-});
+export function helloCommand(program: Argv) {
+  return program.command(
+    "hello <name>",
+    "Say hello",
+    (y) =>
+      y.positional("name", {
+        demandOption: true,
+        describe: "Name to say hello to",
+        type: "string",
+      }),
+    async (args) => {
+      const { hello } = await import("@acme/sdk");
 
-const [name] = positionals;
-
-console.log(hello(name ?? "world"));
+      console.log(hello(args.name));
+    },
+  );
+}
