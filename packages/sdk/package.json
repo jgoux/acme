@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
+    "clean": "rm -rf .dts .turbo dist .eslintcache",
     "lint": "eslint --cache .",
     "type-check": "tsc --build",
     "test": "vitest run"
