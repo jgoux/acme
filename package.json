@@ -23,5 +23,8 @@
     "type-check": "tsc --build",
     "update-deps": "pnpm update \"\\!@types/node\" --interactive --recursive --latest"
   },
-  "packageManager": "pnpm@8.7.5"
+  "packageManager": "pnpm@8.7.5",
+  "engines": {
+    "node": ">=18.12.0 <19"
+  }
 }
