@@ -2,6 +2,8 @@
 
 Opiniated TypeScript monorepo architecture including:
 
+- [x] Pure ESM packages
+- [x] Fast package manager (Pnpm)
 - [x] Type-checking (TypeScript)
 - [x] Lint (ESLint)
 - [x] Format (Prettier)
