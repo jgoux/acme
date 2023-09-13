@@ -17,7 +17,7 @@
     "lint": "turbo run lint",
     "lint-monorepo": "knip",
     "snaplet": "pnpm --filter snaplet run dev --",
-    "upgrade-deps": "pnpm upgrade --interactive --recursive --latest"
+    "update-deps": "pnpm update \"\\!@types/node\" --interactive --recursive --latest"
   },
   "packageManager": "pnpm@8.7.5"
 }
