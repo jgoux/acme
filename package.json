@@ -13,10 +13,10 @@
     "vitest": "0.34.4"
   },
   "scripts": {
-    "type-check": "tsc --build",
+    "build": "turbo run build",
     "lint": "turbo run lint",
     "lint-monorepo": "knip",
-    "acme": "pnpm --filter acme run dev --",
+    "type-check": "tsc --build",
     "update-deps": "pnpm update \"\\!@types/node\" --interactive --recursive --latest"
   },
   "packageManager": "pnpm@8.7.5"
