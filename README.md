@@ -2,6 +2,7 @@
 
 Opiniated TypeScript monorepo architecture including:
 
+- [x] Stable system dependencies (Nix/Devenv)
 - [x] Pure ESM packages
 - [x] Fast package manager (Pnpm)
 - [x] Type-checking (TypeScript)
