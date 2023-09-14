@@ -7,6 +7,4 @@ const queryClient = postgres(env.DATABASE_URL);
 
 export const db = drizzle(queryClient, { schema });
 
-export * from "drizzle-orm";
-
 export * as schema from "./schema.js";
