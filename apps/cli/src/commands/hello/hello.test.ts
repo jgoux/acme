@@ -1,7 +1,12 @@
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import { run } from "#test";
 
-test("should pass", async () => {
-  const { stdout } = await run("acme hello Bob");
-  expect(stdout).toBe("Hello Bob!");
+describe("acme hello", () => {
+  test("it works", async () => {
+    console.log({ cwd: process.cwd() });
+
+    const { stdout } = await run("acme hello Bob");
+
+    expect(stdout).toBe("Hello Bob!");
+  });
 });
