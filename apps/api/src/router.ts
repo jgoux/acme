@@ -1,12 +1,14 @@
-import * as v from "valibot";
 import { t } from "#config/trpc.js";
+import { db } from "./config/drizzle/db.js";
 
 export const appRouter = t.router({
-  greeting: t.procedure
-    .input((i) => v.parse(v.object({ name: v.optional(v.string()) }), i))
-    .query(({ input }) => {
-      return { greeting: `Hello ${input.name ?? "World"}!` };
+  posts: t.router({
+    list: t.procedure.query(async () => {
+      const posts = await db.query.posts.findMany();
+
+      return posts;
     }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

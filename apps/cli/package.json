@@ -10,7 +10,10 @@
     ".": "./dist/index.js"
   },
   "dependencies": {
+    "@acme/api": "workspace:*",
     "@acme/sdk": "workspace:*",
+    "@trpc/client": "10.38.3",
+    "@trpc/server": "10.38.2",
     "yargs": "17.7.2"
   },
   "devDependencies": {
@@ -28,9 +31,9 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "rm -rf .dts .turbo dist .eslintcache",
-    "dev": "tsx --conditions development src/index.ts",
     "lint": "eslint --cache .",
     "start": "node dist/index.js",
+    "start:dev": "tsx --conditions development src/index.ts",
     "test": "vitest run",
     "type-check": "tsc --build"
   }

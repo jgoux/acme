@@ -10,6 +10,18 @@
     pkgs.nodejs_18
   ];
 
+  # https://devenv.sh/services/
+  services.postgres = {
+    enable = true;
+    package = pkgs.postgresql_15;
+    initialDatabases = [{ name = "acme"; }];
+    listen_addresses = "localhost";
+    port = 2345;
+    initialScript = ''
+      CREATE USER postgres SUPERUSER;
+    '';
+  };
+
   # https://devenv.sh/scripts/
   # scripts.hello.exec = "echo hello from $GREET";
 

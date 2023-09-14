@@ -1,8 +1,8 @@
 import { type Argv } from "yargs";
 import { listCommand } from "./commands/list/list.js";
 
-export function subCommand(program: Argv) {
-  return program.command("sub <command>", "manage subs", (y) => {
+export function postsCommand(program: Argv) {
+  return program.command("posts <command>", "manage posts", (y) => {
     listCommand(y);
     return y;
   });

@@ -1,5 +1,5 @@
 {
-  "name": "@snaplet/api",
+  "name": "@acme/api",
   "type": "module",
   "version": "1.0.0",
   "imports": {
@@ -7,7 +7,9 @@
     "#test": "./test/index.js"
   },
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "development": "./src/router.ts"
+    }
   },
   "dependencies": {
     "@acme/sdk": "workspace:*",
@@ -21,6 +23,7 @@
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "18.17.15",
+    "dotenv-cli": "7.3.0",
     "drizzle-kit": "0.19.13",
     "eslint": "8.49.0",
     "tsx": "3.12.9",
@@ -30,7 +33,9 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "rm -rf .dts .turbo dist .eslintcache",
-    "dev": "tsx --conditions development src/index.ts",
+    "dev": "dotenv -c -- tsx --conditions development src/index.ts",
+    "drizzle-kit": "dotenv -c -- drizzle-kit",
+    "drizzle-kit:migrate": "dotenv -c -- tsx migrate.ts",
     "lint": "eslint --cache .",
     "start": "node dist/index.js",
     "test": "vitest run",

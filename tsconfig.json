@@ -5,6 +5,9 @@
   },
   "references": [
     {
+      "path": "./apps/api"
+    },
+    {
       "path": "./apps/cli"
     },
     {
@@ -12,6 +15,7 @@
     },
   ],
   "exclude": [
+    "./apps",
     "./packages"
   ]
 }
