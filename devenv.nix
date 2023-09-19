@@ -13,7 +13,7 @@
   # https://devenv.sh/services/
   services.postgres = {
     enable = true;
-    package = pkgs.postgresql_15;
+    package = pkgs.postgresql_16;
     initialDatabases = [{ name = "acme"; }];
     listen_addresses = "localhost";
     port = 2345;

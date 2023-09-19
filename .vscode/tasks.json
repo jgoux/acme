@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev:type-check",
+      "type": "shell",
+      "command": "devenv shell pnpm type-check --watch",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      },
+    },
+    {
+      "label": "dev:api",
+      "type": "shell",
+      "command": "devenv shell pnpm -F api dev",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      },
+    },
+    {
+      "label": "dev",
+      "dependsOn": [
+        "dev:type-check",
+        "dev:api",
+      ],
+      "problemMatcher": []
+    },
+  ]
+}
