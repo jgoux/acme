@@ -5,15 +5,11 @@ import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 import storybookPlugin from "eslint-plugin-storybook";
 import globals from "globals";
-import { recommended } from "./recommended.js"
 
 export const react = [
-  ...recommended,
   {
-    files: recommended[0].files,
-    ignores: recommended[0].ignores,
-    ...reactPluginRecommended,
-    // ignores: recommended[0].ignores,
+    files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
+    ignores: [".dts/**", "dist/**"],
     languageOptions: {
       globals: {
         ...globals.serviceworker,
@@ -47,7 +43,7 @@ export const react = [
   },
   {
     files: storybookPlugin.configs.recommended.overrides[0].files,
-    ignores: recommended[0].ignores,
+    ignores: [".dts/**", "dist/**"],
     plugins: {
       "storybook": storybookPlugin,
     },
@@ -55,7 +51,7 @@ export const react = [
   },
   {
     files: storybookPlugin.configs.recommended.overrides[1].files,
-    ignores: recommended[0].ignores,
+    ignores: [".dts/**", "dist/**"],
     plugins: {
       "storybook": storybookPlugin,
     },
