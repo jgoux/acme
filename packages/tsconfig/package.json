@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "exports": {
-    ".": "./tsconfig.json"
+    ".": "./tsconfig.json",
+    "./react": "./tsconfig.react.json"
   },
   "dependencies": {
     "@tsconfig/node18": "18.2.2",
-    "@tsconfig/strictest": "2.0.2"
+    "@tsconfig/strictest": "2.0.2",
+    "@tsconfig/vite-react": "2.0.1"
   }
 }

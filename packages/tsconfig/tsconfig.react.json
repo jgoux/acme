@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "@tsconfig/strictest",
+    "@tsconfig/vite-react"
+  ],
+  "compilerOptions": {
+    "checkJs": false,
+    "composite": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "customConditions": [
+      "development"
+    ],
+  }
+}
