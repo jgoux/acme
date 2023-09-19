@@ -1,3 +1,4 @@
 import { react } from "@acme/eslint-config";
 
-export default [react];
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+export default [...react];
