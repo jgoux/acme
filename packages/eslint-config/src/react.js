@@ -9,6 +9,7 @@ import { recommended } from "./recommended.js"
 export const react = {
   ...reactPluginRecommended,
   files: recommended.files,
+  ignores: recommended.ignores,
   languageOptions: {
     ...recommended.languageOptions,
     globals: {
