@@ -12,7 +12,9 @@
     "lint": "eslint --cache . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
-    "type-check": "tsc --build"
+    "type-check": "tsc --build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -20,6 +22,14 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
+    "@storybook/addon-essentials": "7.4.2",
+    "@storybook/addon-interactions": "7.4.2",
+    "@storybook/addon-links": "7.4.2",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/blocks": "7.4.2",
+    "@storybook/react": "7.4.2",
+    "@storybook/react-vite": "7.4.2",
+    "@storybook/testing-library": "0.2.1",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.5.1",
     "@total-typescript/ts-reset": "0.5.1",
@@ -28,6 +38,7 @@
     "@vitejs/plugin-react": "4.0.4",
     "eslint": "8.49.0",
     "jsdom": "22.1.0",
+    "storybook": "^7.4.2",
     "typescript": "5.2.2",
     "vite": "4.4.9",
     "vitest": "0.34.4",
