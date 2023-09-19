@@ -28,6 +28,9 @@ export const recommended = {
       espree: [".js", ".cjs", ".mjs", ".jsx"],
       "@typescript-eslint/parser": [".ts", ".cts", ".mts", ".tsx"],
     },
+    "import/ignore": [
+      "node_modules"
+    ],
   },
   plugins: {
     "@typescript-eslint": typescriptPlugin,

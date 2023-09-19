@@ -20,13 +20,17 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/user-event": "14.5.1",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "@vitejs/plugin-react": "4.0.4",
     "eslint": "8.49.0",
+    "jsdom": "22.1.0",
     "typescript": "5.2.2",
     "vite": "4.4.9",
-    "vitest": "0.34.4"
+    "vitest": "0.34.4",
+    "vitest-dom": "0.1.1"
   }
 }
