@@ -137,6 +137,9 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@total-typescript/ts-reset':
+        specifier: 0.5.1
+        version: 0.5.1
       '@types/react':
         specifier: 18.2.22
         version: 18.2.22
@@ -155,6 +158,9 @@ importers:
       vite:
         specifier: 4.4.9
         version: 4.4.9
+      vitest:
+        specifier: 0.34.4
+        version: 0.34.4
 
   packages/eslint-config:
     dependencies:
