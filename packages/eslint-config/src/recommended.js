@@ -27,8 +27,7 @@ export const recommended = [
     },
     settings: {
       "import/parsers": {
-        espree: [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx"],
-        "@typescript-eslint/parser": [".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
+        "@typescript-eslint/parser": [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx", ".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
       },
       "import/ignore": [
         "node_modules"
