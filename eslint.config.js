@@ -1,3 +1,3 @@
-import config from "@acme/eslint-config";
+import { recommended } from "@acme/eslint-config";
 
-export default config;
+export default recommended;

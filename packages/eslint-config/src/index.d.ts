@@ -1,4 +1,4 @@
 import { type ESLint } from "eslint";
 
-export const recommended: Array<ESLint.ConfigData>;
-export const react: Array<ESLint.ConfigData>;
+declare export const recommended: Array<ESLint.ConfigData>;
+declare export const react: Array<ESLint.ConfigData>;

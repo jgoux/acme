@@ -4,7 +4,7 @@
     "@tsconfig/node18"
   ],
   "compilerOptions": {
-    "checkJs": false,
+    "allowJs": true,
     "composite": true,
     "customConditions": [
       "development"

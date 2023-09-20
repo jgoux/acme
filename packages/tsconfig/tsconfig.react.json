@@ -4,7 +4,7 @@
     "@tsconfig/vite-react"
   ],
   "compilerOptions": {
-    "checkJs": false,
+    "allowJs": true,
     "composite": true,
     "customConditions": [
       "development"
