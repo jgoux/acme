@@ -11,7 +11,7 @@ import globals from "globals";
 
 export const recommended = [
   {
-    files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
+    files: ["**/*.{js,cjs,mjs,jsx,cjsx,mjsx,ts,cts,mts,tsx,ctsx,mtsx}"],
     ignores: [".dts/**", "dist/**"],
     languageOptions: {
       globals: {
@@ -27,8 +27,8 @@ export const recommended = [
     },
     settings: {
       "import/parsers": {
-        espree: [".js", ".cjs", ".mjs", ".jsx"],
-        "@typescript-eslint/parser": [".ts", ".cts", ".mts", ".tsx"],
+        espree: [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx"],
+        "@typescript-eslint/parser": [".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
       },
       "import/ignore": [
         "node_modules"
