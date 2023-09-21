@@ -21,3 +21,4 @@ Opiniated TypeScript monorepo architecture including:
 - [x] CLI app
 - [x] API backend
 - [x] Shared core/SDK
+- [ ] Observability (Opentelemetry/Grafana Tempo)
