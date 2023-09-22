@@ -11,7 +11,7 @@
     "dev": "vite",
     "lint": "eslint --cache . --max-warnings 0",
     "preview": "vite preview",
-    "test": "playwright test -c playwright-ct.config.ts",
+    "test:components": "playwright test -c playwright-ct.config.ts",
     "test:e2e": "playwright test",
     "type-check": "tsc --build",
     "storybook": "storybook dev -p 6006",
