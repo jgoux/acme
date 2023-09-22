@@ -15,7 +15,7 @@ Opiniated TypeScript monorepo architecture including:
 - [x] Task runner (Turborepo)
 - [x] Monorepo lint (Knip)
 - [x] Unit/Integration tests (Vitest)
-- [ ] E2E tests (Playwright)
+- [x] Components/E2E tests (Playwright)
 - [x] Storybook
 - [x] Vite web app
 - [x] CLI app
