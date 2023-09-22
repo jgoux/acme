@@ -17,6 +17,7 @@ Opiniated TypeScript monorepo architecture including:
 - [x] Unit/Integration tests (Vitest)
 - [x] Components/E2E tests (Playwright)
 - [x] Storybook
+- [x] Stories tests (a11y included)
 - [x] Vite web app
 - [x] CLI app
 - [x] API backend
