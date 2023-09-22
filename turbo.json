@@ -17,6 +17,9 @@
       "persistent": true
     },
     "lint": {},
-    "test": {}
+    "test": {},
+    "test:components": {},
+    "test:e2e": {},
+    "test:storybook": {}
   }
 }
