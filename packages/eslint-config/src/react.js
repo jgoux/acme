@@ -9,9 +9,6 @@ import globals from "globals";
 
 export const react = [
   {
-    ignores: ["**/{.dts,dist,node_modules}"],
-  },
-  {
     files: ["**/*.?([cm])[jt]s?(x)"],
     languageOptions: {
       globals: {
