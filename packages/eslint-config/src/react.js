@@ -3,8 +3,8 @@ import reactPluginJsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 import reactPluginRecommended from "eslint-plugin-react/configs/recommended.js";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
+import playwrightPlugin from "eslint-plugin-playwright";
 import storybookPlugin from "eslint-plugin-storybook";
-import testingLibraryPlugin from "eslint-plugin-testing-library";
 import globals from "globals";
 
 export const react = [
@@ -49,13 +49,15 @@ export const react = [
     rules: storybookPlugin.configs.recommended.overrides[0].rules
   },
   {
-    files: ["**/?(*.)+(test).?([cm])[jt]s?(x)"],
-    plugins: {
-      "testing-library": testingLibraryPlugin,
+    files: ["**/?(*.)+(e2e|test).?([cm])[jt]s?(x)"],
+    languageOptions: {
+      globals: {
+        ...globals["shared-node-browser"],
+      },
     },
-    rules: {
-      ...testingLibraryPlugin.configs.react.rules,
-      "testing-library/prefer-user-event": "error",
-    }
+    plugins: {
+      "playwright": playwrightPlugin,
+    },
+    rules: playwrightPlugin.configs.recommended.rules,
   }
 ];

@@ -24,7 +24,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "rm -rf .dts .turbo dist .eslintcache",
-    "lint": "eslint --cache . --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint --cache . --max-warnings 0",
     "type-check": "tsc --build",
     "test": "vitest run"
   }

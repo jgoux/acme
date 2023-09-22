@@ -11,7 +11,12 @@ import globals from "globals";
 
 export const recommended = [
   {
-    ignores: ["**/{.dts,dist,node_modules}"],
+    ignores: ["**/{.cache,.dts,dist,node_modules,playwright,test-results}"],
+  },
+  {
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
   },
   {
     files: ["**/*.?([cm])[jt]s?(x)"],
@@ -81,8 +86,6 @@ export const recommended = [
     plugins: {
       vitest: vitestPlugin,
     },
-    rules: {
-      ...vitestPlugin.configs.recommended.rules,
-    }
+    rules: vitestPlugin.configs.recommended.rules
   }
 ];
