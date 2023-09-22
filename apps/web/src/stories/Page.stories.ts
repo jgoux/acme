@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { type Meta, type StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { Page } from "./Page";
@@ -24,5 +25,6 @@ export const LoggedIn: Story = {
       name: /Log in/i,
     });
     await userEvent.click(loginButton);
+    await expect(canvas.getByText(/Welcome/i)).toBeInTheDocument();
   },
 };
