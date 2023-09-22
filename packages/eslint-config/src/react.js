@@ -53,6 +53,9 @@ export const react = [
     plugins: {
       "testing-library": testingLibraryPlugin,
     },
-    rules: testingLibraryPlugin.configs.react.rules
+    rules: {
+      ...testingLibraryPlugin.configs.react.rules,
+      "testing-library/prefer-user-event": "error",
+    }
   }
 ];
