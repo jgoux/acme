@@ -4,12 +4,15 @@ import reactPluginRecommended from "eslint-plugin-react/configs/recommended.js";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 import storybookPlugin from "eslint-plugin-storybook";
+import testingLibraryPlugin from "eslint-plugin-testing-library";
 import globals from "globals";
 
 export const react = [
   {
-    files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
-    ignores: [".dts/**", "dist/**"],
+    ignores: ["**/{.dts,dist,node_modules}"],
+  },
+  {
+    files: ["**/*.?([cm])[jt]s?(x)"],
     languageOptions: {
       globals: {
         ...globals.serviceworker,
@@ -43,18 +46,16 @@ export const react = [
   },
   {
     files: storybookPlugin.configs.recommended.overrides[0].files,
-    ignores: [".dts/**", "dist/**"],
     plugins: {
       "storybook": storybookPlugin,
     },
     rules: storybookPlugin.configs.recommended.overrides[0].rules
   },
   {
-    files: storybookPlugin.configs.recommended.overrides[1].files,
-    ignores: [".dts/**", "dist/**"],
+    files: ["**/?(*.)+(test).?([cm])[jt]s?(x)"],
     plugins: {
-      "storybook": storybookPlugin,
+      "testing-library": testingLibraryPlugin,
     },
-    rules: storybookPlugin.configs.recommended.overrides[1].rules
+    rules: testingLibraryPlugin.configs.react.rules
   }
 ];

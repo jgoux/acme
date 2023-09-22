@@ -11,8 +11,10 @@ import globals from "globals";
 
 export const recommended = [
   {
-    files: ["**/*.{js,cjs,mjs,jsx,cjsx,mjsx,ts,cts,mts,tsx,ctsx,mtsx}"],
-    ignores: [".dts/**", "dist/**"],
+    ignores: ["**/{.dts,dist,node_modules}"],
+  },
+  {
+    files: ["**/*.?([cm])[jt]s?(x)"],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -75,8 +77,7 @@ export const recommended = [
     },
   },
   {
-    files: ["**/*.test.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
-    ignores: [".dts/**", "dist/**"],
+    files: ["**/?(*.)+(test).?([cm])[jt]s?(x)"],
     plugins: {
       vitest: vitestPlugin,
     },
