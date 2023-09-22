@@ -41,7 +41,7 @@
     "storybook": "^7.4.3",
     "typescript": "5.2.2",
     "vite": "4.4.9",
-    "vitest": "0.34.4",
+    "vitest": "0.34.5",
     "vitest-dom": "0.1.1"
   }
 }

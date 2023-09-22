@@ -19,7 +19,7 @@
     "@types/node": "18.17.15",
     "eslint": "8.49.0",
     "typescript": "5.2.2",
-    "vitest": "0.34.4"
+    "vitest": "0.34.5"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
