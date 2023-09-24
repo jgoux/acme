@@ -22,3 +22,10 @@ export const postsRelations = relations(posts, ({ one }) => ({
     references: [users.id],
   }),
 }));
+
+export const schema = {
+  users,
+  usersRelations,
+  posts,
+  postsRelations,
+};
