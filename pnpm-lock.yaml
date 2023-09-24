@@ -15,8 +15,8 @@ importers:
         specifier: workspace:*
         version: link:packages/tsconfig
       knip:
-        specifier: 2.26.0
-        version: 2.26.0
+        specifier: 2.27.0
+        version: 2.27.0
       turbo:
         specifier: 1.10.14
         version: 1.10.14
@@ -9217,8 +9217,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knip@2.26.0:
-    resolution: {integrity: sha512-p7qhABcGwq3dDkLnhKNKqyjazMO2BMLJBQrbJdWKIy4ZJOFAeqJ8O4MVhuub1XnEGj/M3jfOQPVz1rQGz2uu0A==}
+  /knip@2.27.0:
+    resolution: {integrity: sha512-TGRdDq6Qvr0QT80Dbpb0U88D0iyhbA3cdwIjA9xqoQihhz+bajHfb/Vt1j2OKjV70Ohvi5QSWf5mWUhaWQKNMQ==}
     engines: {node: '>=16.17.0 <17 || >=18.6.0'}
     hasBin: true
     dependencies:
