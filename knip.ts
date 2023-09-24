@@ -11,10 +11,6 @@ const config: KnipConfig = {
     "packages/*": {
       entry: ["*.(js|ts)", "src/index.(ts|tsx)"],
     },
-    // knip requires "react" to be a dependency when using `"jsx": "react-jsx"` in tsconfig.json
-    "packages/tsconfig": {
-      ignoreDependencies: ["react"],
-    },
   },
 };
 
