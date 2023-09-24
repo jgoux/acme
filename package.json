@@ -8,6 +8,7 @@
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
+    "eslint": "8.50.0",
     "knip": "2.27.1",
     "turbo": "1.10.14",
     "typescript": "5.2.2",
@@ -18,7 +19,7 @@
     "clean": "turbo run clean",
     "clean-monorepo": "git clean -dfX",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "lint": "eslint --cache . --max-warnings 0 && turbo run lint",
     "lint-monorepo": "knip",
     "test": "turbo run test",
     "test:components": "turbo run test:components",
