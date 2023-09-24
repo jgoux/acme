@@ -22,9 +22,9 @@
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "18.17.18",
     "@types/yargs": "17.0.24",
-    "eslint": "8.49.0",
+    "eslint": "8.50.0",
     "execa": "8.0.1",
-    "tsx": "3.12.10",
+    "tsx": "3.13.0",
     "typescript": "5.2.2",
     "vitest": "0.34.5"
   },

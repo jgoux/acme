@@ -25,8 +25,8 @@
     "@types/node": "18.17.18",
     "dotenv-cli": "7.3.0",
     "drizzle-kit": "0.19.13",
-    "eslint": "8.49.0",
-    "tsx": "3.12.10",
+    "eslint": "8.50.0",
+    "tsx": "3.13.0",
     "typescript": "5.2.2",
     "vitest": "0.34.5"
   },
