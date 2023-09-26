@@ -8,7 +8,7 @@
   },
   "include": [
     "src",
-    "reset.d.ts"
+    "global.d.ts"
   ],
   "exclude": [
     "src/**/*.test.ts",

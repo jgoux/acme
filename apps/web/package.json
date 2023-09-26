@@ -6,7 +6,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsc --build tsconfig.build.json && vite build",
+    "build": "vite build",
     "clean": "rm -rf .dts .turbo dist .eslintcache",
     "dev": "vite",
     "lint": "eslint --cache . --max-warnings 0",
