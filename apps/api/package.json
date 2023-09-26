@@ -16,7 +16,7 @@
     "@trpc/server": "10.38.4",
     "drizzle-orm": "0.28.6",
     "postgres": "3.3.5",
-    "valibot": "0.17.0"
+    "valibot": "0.17.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
