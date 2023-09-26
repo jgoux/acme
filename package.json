@@ -17,7 +17,7 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "clean-monorepo": "git clean -dfX",
+    "clean-monorepo": "git clean -dfX -e \\!.env.local",
     "dev": "turbo run dev",
     "lint": "eslint --cache . --max-warnings 0 && turbo run lint",
     "lint-monorepo": "knip",
