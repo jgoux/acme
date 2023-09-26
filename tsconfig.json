@@ -11,6 +11,9 @@
       "path": "./apps/cli"
     },
     {
+      "path": "./apps/web"
+    },
+    {
       "path": "./packages/sdk"
     },
   ],

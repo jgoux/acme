@@ -5,7 +5,10 @@ interface User {
   name: string;
 }
 
-interface HeaderProps {
+/**
+ * @public
+ */
+export interface HeaderProps {
   onCreateAccount: () => void;
   onLogin: () => void;
   onLogout: () => void;
