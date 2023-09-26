@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "test:components": "playwright test -c playwright-ct.config.ts",
     "test:e2e": "playwright test",
-    "test:storybook": "test-storybook",
+    "test:storybook": "start-server-and-test 'pnpm storybook --ci' http://localhost:6006 test-storybook",
     "type-check": "tsc --build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -42,6 +42,7 @@
     "@vitejs/plugin-react": "4.1.0",
     "axe-playwright": "1.2.3",
     "eslint": "8.50.0",
+    "start-server-and-test": "2.0.1",
     "storybook": "^7.4.5",
     "typescript": "5.2.2",
     "vite": "4.4.9"
