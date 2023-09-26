@@ -26,7 +26,8 @@
     "execa": "8.0.1",
     "tsx": "3.13.0",
     "typescript": "5.2.2",
-    "vitest": "0.34.5"
+    "vitest": "0.34.5",
+    "wait-for-localhost": "4.0.1"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",

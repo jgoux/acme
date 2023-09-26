@@ -3,8 +3,9 @@ import { helloProcedure } from "./hello.js";
 import { postsRouter } from "./posts/index.js";
 
 export const appRouter = t.router({
-  posts: postsRouter,
+  healthcheck: t.procedure.query(() => "ok"),
   hello: helloProcedure,
+  posts: postsRouter,
 });
 
 export type AppRouter = typeof appRouter;
