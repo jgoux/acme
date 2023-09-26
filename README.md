@@ -22,5 +22,6 @@ Opiniated TypeScript monorepo architecture including:
 - [x] CLI app
 - [x] API backend
 - [x] Shared core/SDK
+- [ ] Design-system / UI library
 - [ ] Observability (Opentelemetry/Grafana Tempo)
 - [ ] GitHub Actions for the CI (type-check, lint, tests, deploy)
