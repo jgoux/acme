@@ -16,7 +16,8 @@
     "test:storybook": "start-server-and-test 'pnpm storybook --ci' http://localhost:6006 test-storybook",
     "type-check": "tsc --build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "bundle-visualizer": "vite-bundle-visualizer"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -45,6 +46,7 @@
     "start-server-and-test": "2.0.1",
     "storybook": "^7.4.5",
     "typescript": "5.2.2",
-    "vite": "4.4.9"
+    "vite": "4.4.9",
+    "vite-bundle-visualizer": "0.10.0"
   }
 }
