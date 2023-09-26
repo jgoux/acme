@@ -15,7 +15,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/sdk/tsconfig.build.json"
+      "path": "../../packages/core/tsconfig.build.json"
     },
   ]
 }

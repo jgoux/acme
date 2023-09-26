@@ -1,5 +1,5 @@
 {
-  "name": "@acme/sdk",
+  "name": "@acme/core",
   "type": "module",
   "version": "1.0.0",
   "imports": {

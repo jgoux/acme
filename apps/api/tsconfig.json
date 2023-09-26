@@ -5,7 +5,7 @@
   },
   "references": [
     {
-      "path": "../../packages/sdk"
+      "path": "../../packages/core"
     },
   ]
 }

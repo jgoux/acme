@@ -12,7 +12,7 @@
     }
   },
   "dependencies": {
-    "@acme/sdk": "workspace:*",
+    "@acme/core": "workspace:*",
     "@trpc/server": "10.38.4",
     "drizzle-orm": "0.28.6",
     "postgres": "3.3.5",

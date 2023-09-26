@@ -14,7 +14,7 @@
       "path": "./apps/web"
     },
     {
-      "path": "./packages/sdk"
+      "path": "./packages/core"
     },
   ],
   "exclude": [

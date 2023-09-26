@@ -1,4 +1,4 @@
-import { hello } from "@acme/sdk";
+import { hello } from "@acme/core";
 import * as v from "valibot";
 import { t } from "#config/trpc.js";
 

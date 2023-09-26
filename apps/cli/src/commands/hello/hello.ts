@@ -11,7 +11,7 @@ export function helloCommand(program: Argv) {
         type: "string",
       }),
     async (args) => {
-      const { hello } = await import("@acme/sdk");
+      const { hello } = await import("@acme/core");
 
       console.log(hello(args.name));
     },
