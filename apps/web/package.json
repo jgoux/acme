@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "clean": "rm -rf .dts .turbo dist .eslintcache",
+    "clean": "rm -rf .dts .turbo dist playwright-report test-results .eslintcache",
     "dev": "vite",
     "lint": "eslint --cache . --max-warnings 0",
     "preview": "vite preview",
