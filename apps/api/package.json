@@ -38,7 +38,7 @@
     "drizzle-kit:migrate": "dotenv -c -- tsx migrate.ts",
     "lint": "eslint --cache . --max-warnings 0",
     "start": "node dist/index.js",
-    "//test": "vitest run",
+    "test": "dotenv -c -- vitest run",
     "type-check": "tsc --build"
   }
 }
