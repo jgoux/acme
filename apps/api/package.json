@@ -8,7 +8,7 @@
   },
   "exports": {
     ".": {
-      "development": "./src/router.ts"
+      "development": "./src/router/index.ts"
     }
   },
   "dependencies": {
