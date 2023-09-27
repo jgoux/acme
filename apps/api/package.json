@@ -23,6 +23,7 @@
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "18.17.18",
+    "dotenv": "16.3.1",
     "dotenv-cli": "7.3.0",
     "drizzle-kit": "0.19.13",
     "eslint": "8.50.0",

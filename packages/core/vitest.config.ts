@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineProject } from "vitest/config";
 
@@ -13,6 +13,5 @@ export default defineProject({
   test: {
     name: pkg.name,
     root,
-    globalSetup: resolve(root, "./test/global-setup.ts"),
   },
 });

@@ -1,3 +1,4 @@
+import { config } from "dotenv";
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -13,6 +14,6 @@ export default defineProject({
   test: {
     name: pkg.name,
     root,
-    globalSetup: resolve(root, "./test/global-setup.ts"),
+    env: config({ path: resolve(root, ".env") }).parsed,
   },
 });

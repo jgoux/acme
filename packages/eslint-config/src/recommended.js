@@ -1,7 +1,7 @@
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import prettierConfig from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-i";
 import nodeImportPlugin from "eslint-plugin-node-import";
 import prettierPlugin from "eslint-plugin-prettier";
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
@@ -37,9 +37,6 @@ export const recommended = [
         "@typescript-eslint/parser": [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx", ".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
       },
       "import/external-module-folders": ["node_modules", "node_modules/@types"],
-      // "import/ignore": [
-      //   "node_modules"
-      // ],
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
