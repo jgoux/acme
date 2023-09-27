@@ -36,9 +36,10 @@ export const recommended = [
       "import/parsers": {
         "@typescript-eslint/parser": [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx", ".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
       },
-      "import/ignore": [
-        "node_modules"
-      ],
+      "import/external-module-folders": ["node_modules", "node_modules/@types"],
+      // "import/ignore": [
+      //   "node_modules"
+      // ],
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
@@ -53,6 +54,7 @@ export const recommended = [
       ...typescriptPlugin.configs["strict-type-checked"].rules,
       ...typescriptPlugin.configs["stylistic-type-checked"].rules,
       ...importPlugin.configs.recommended.rules,
+      ...importPlugin.configs.typescript.rules,
       ...perfectionistPlugin.configs["recommended-natural"].rules,
       "@typescript-eslint/array-type": ["error", { default: "generic" }],
       "@typescript-eslint/consistent-type-imports": "error",
