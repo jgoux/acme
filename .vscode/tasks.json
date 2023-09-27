@@ -24,10 +24,22 @@
       },
     },
     {
+      "label": "dev:web",
+      "type": "shell",
+      "command": "devenv shell pnpm -F web dev",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      },
+    },
+    {
       "label": "dev",
       "dependsOn": [
         "dev:type-check",
         "dev:api",
+        "dev:web"
       ],
       "problemMatcher": []
     },
