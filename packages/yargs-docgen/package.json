@@ -24,6 +24,7 @@
     "@types/node": "18.17.18",
     "@types/yargs": "17.0.25",
     "eslint": "8.50.0",
+    "snaplet": "0.62.0",
     "tsx": "3.13.0",
     "typescript": "5.2.2",
     "vitest": "0.34.5"

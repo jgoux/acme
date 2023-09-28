@@ -10,13 +10,20 @@ function serializeDescription(command: Command) {
     return null;
   }
 
-  return `The \`${command.name}\` command is used to ${command.description}.`;
+  let [verb, ...rest] = command.description.split(" ");
+  if (verb?.endsWith("s")) {
+    verb = verb.slice(0, -1);
+  }
+
+  const description = [verb, ...rest].join(" ");
+
+  return `The \`${command.name}\` command is used to ${description}.`;
 }
 
 function serializeUsage(command: Command) {
   const title = "**Usage**";
 
-  const code = `\`\`\`bash
+  const code = `\`\`\`bash >_&nbsp;terminal
 ${command.template}
 \`\`\``;
 
@@ -61,8 +68,8 @@ function serializeOptions(command: Command) {
     option.alias,
     option.description,
     option.type,
-    option.required ? "✅" : undefined,
-    option.deprecated ? "✅" : undefined,
+    option.required ? "✔" : undefined,
+    option.deprecated ? "✔" : undefined,
     option.choices ? option.choices.toString() : undefined,
     option.default ? option.default.toString() : undefined,
     option.usage,
@@ -125,7 +132,10 @@ function serializeCommand(command: Command, level = 1): string {
 }
 
 export function serialize(command: Command) {
-  const title = "# CLI Reference";
+  const title = "# CLI Commands";
 
-  return [title, serializeCommand(command)].join("\n\n");
+  const description =
+    "You can use the Command-Line Interface (CLI) provided by Snaplet to manage your data from a terminal window.";
+
+  return [title, description, serializeCommand(command)].join("\n\n");
 }
