@@ -28,7 +28,7 @@
     "test:e2e": "turbo run test:e2e",
     "type-check": "tsc --build",
     "update-deps": "pnpm update \"!@types/node\" --interactive --recursive --latest",
-    "visualize-deps": "skott --displayMode=webapp --trackThirdPartyDependencies"
+    "visualize-deps": "skott --displayMode=webapp --trackBuiltinDependencies --trackThirdPartyDependencies"
   },
   "packageManager": "pnpm@8.8.0",
   "engines": {
