@@ -2,7 +2,11 @@ name: Tests
 
 on:
   pull_request:
-    types: [ready_for_review, opened, synchronize]
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
     branches:
       - main
 
@@ -16,6 +20,7 @@ env:
 
 jobs:
   test-type-check:
+    if: ! github.event.pull_request.draft
     name: Type check
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +37,7 @@ jobs:
         uses: andymckay/cancel-action@0.3
 
   test-lint:
+    if: ! github.event.pull_request.draft
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -48,6 +54,7 @@ jobs:
         uses: andymckay/cancel-action@0.3
 
   test-unit-integration:
+    if: ! github.event.pull_request.draft
     name: Unit and integration tests
     runs-on: ubuntu-latest
     steps:
@@ -64,6 +71,7 @@ jobs:
         uses: andymckay/cancel-action@0.3
 
   test-components:
+    if: ! github.event.pull_request.draft
     name: Component tests
     runs-on: ubuntu-latest
     steps:
@@ -80,6 +88,7 @@ jobs:
         uses: andymckay/cancel-action@0.3
 
   test-storybook:
+    if: ! github.event.pull_request.draft
     name: Storybook tests
     runs-on: ubuntu-latest
     steps:
@@ -96,6 +105,7 @@ jobs:
         uses: andymckay/cancel-action@0.3
 
   test-e2e:
+    if: ! github.event.pull_request.draft
     name: E2E tests
     runs-on: ubuntu-latest
     steps:
