@@ -10,6 +10,7 @@
     "@acme/tsconfig": "workspace:*",
     "eslint": "8.51.0",
     "knip": "2.32.1",
+    "skott": "0.31.3",
     "turbo": "1.10.15",
     "typescript": "5.2.2",
     "vitest": "0.34.6"
@@ -26,7 +27,8 @@
     "test:storybook": "turbo run test:storybook",
     "test:e2e": "turbo run test:e2e",
     "type-check": "tsc --build",
-    "update-deps": "pnpm update \"!@types/node\" --interactive --recursive --latest"
+    "update-deps": "pnpm update \"!@types/node\" --interactive --recursive --latest",
+    "visualize-deps": "skott --displayMode=webapp --trackThirdPartyDependencies"
   },
   "packageManager": "pnpm@8.8.0",
   "engines": {
