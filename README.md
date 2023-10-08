@@ -22,6 +22,7 @@ Opiniated TypeScript monorepo architecture including:
 - [x] CLI app
 - [x] API backend
 - [x] Shared core/SDK
+- [ ] Environment variables management with dotenv-vault
 - [ ] Design-system / UI library
 - [ ] Changesets for versioning and publishing packages
 - [ ] Observability (Opentelemetry/Grafana Tempo)

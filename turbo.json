@@ -17,7 +17,9 @@
       "persistent": true
     },
     "lint": {},
-    "test": {},
+    "test": {
+      "dependsOn": ["build"]
+    },
     "test:components": {},
     "test:e2e": {},
     "test:storybook": {}

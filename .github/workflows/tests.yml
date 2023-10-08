@@ -20,7 +20,7 @@ env:
 
 jobs:
   test-type-check:
-    if: ! github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     name: Type check
     runs-on: ubuntu-latest
     steps:
@@ -33,11 +33,11 @@ jobs:
       - name: Type check
         run: pnpm type-check
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-lint:
-    if: ! github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -50,11 +50,28 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
+
+  test-lint-monorepo:
+    if: github.event.pull_request.draft == false
+    name: Lint monorepo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/actions/install
+
+      - name: Lint monorepo
+        run: pnpm lint-monorepo
+
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-unit-integration:
-    if: ! github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     name: Unit and integration tests
     runs-on: ubuntu-latest
     steps:
@@ -67,11 +84,11 @@ jobs:
       - name: Run unit and integration tests
         run: pnpm test
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-components:
-    if: ! github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     name: Component tests
     runs-on: ubuntu-latest
     steps:
@@ -81,14 +98,17 @@ jobs:
       - name: Install
         uses: ./.github/actions/install
 
+      - name: Setup Playwright
+        uses: ./.github/actions/setup-playwright
+
       - name: Run components tests
         run: pnpm test:components
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-storybook:
-    if: ! github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     name: Storybook tests
     runs-on: ubuntu-latest
     steps:
@@ -98,14 +118,17 @@ jobs:
       - name: Install
         uses: ./.github/actions/install
 
+      - name: Setup Playwright
+        uses: ./.github/actions/setup-playwright
+
       - name: Run Storybook tests
         run: pnpm test:storybook
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-e2e:
-    if: ! github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     name: E2E tests
     runs-on: ubuntu-latest
     steps:
@@ -115,8 +138,11 @@ jobs:
       - name: Install
         uses: ./.github/actions/install
 
+      - name: Setup Playwright
+        uses: ./.github/actions/setup-playwright
+
       - name: Run E2E tests
         run: pnpm test:e2e
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
