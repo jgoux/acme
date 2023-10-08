@@ -33,8 +33,8 @@ jobs:
       - name: Type check
         run: pnpm type-check
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-lint:
     if: github.event.pull_request.draft == false
@@ -50,8 +50,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-lint-monorepo:
     if: github.event.pull_request.draft == false
@@ -67,8 +67,8 @@ jobs:
       - name: Lint monorepo
         run: pnpm lint-monorepo
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-unit-integration:
     if: github.event.pull_request.draft == false
@@ -84,8 +84,8 @@ jobs:
       - name: Run unit and integration tests
         run: pnpm test
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-components:
     if: github.event.pull_request.draft == false
@@ -101,8 +101,8 @@ jobs:
       - name: Run components tests
         run: pnpm test:components
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-storybook:
     if: github.event.pull_request.draft == false
@@ -118,8 +118,8 @@ jobs:
       - name: Run Storybook tests
         run: pnpm test:storybook
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
 
   test-e2e:
     if: github.event.pull_request.draft == false
@@ -135,5 +135,5 @@ jobs:
       - name: Run E2E tests
         run: pnpm test:e2e
 
-      - if: ${{ failure() }}
-        uses: andymckay/cancel-action@0.3
+      # - if: ${{ failure() }}
+      #   uses: andymckay/cancel-action@0.3
