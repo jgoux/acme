@@ -22,8 +22,11 @@ Opiniated TypeScript monorepo architecture including:
 - [x] CLI app
 - [x] API backend
 - [x] Shared core/SDK
-- [ ] Environment variables management with dotenv-vault
+- [x] GitHub Action for tests
+- [ ] GitHub Action for deployments
+- [ ] GitHub Action for previews
+- [ ] Renovate for dependencies updates
+- [ ] Environment variables management with dotenv-vault or infisical
 - [ ] Design-system / UI library
 - [ ] Changesets for versioning and publishing packages
 - [ ] Observability (Opentelemetry/Grafana Tempo)
-- [ ] GitHub Actions for the CI (type-check, lint, tests, deploy)
