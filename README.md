@@ -23,9 +23,9 @@ Opiniated TypeScript monorepo architecture including:
 - [x] API backend
 - [x] Shared core/SDK
 - [x] GitHub Action for tests
+- [x] Renovate for dependencies updates
 - [ ] GitHub Action for deployments
 - [ ] GitHub Action for previews
-- [ ] Renovate for dependencies updates
 - [ ] Environment variables management with dotenv-vault or infisical
 - [ ] Design-system / UI library
 - [ ] Changesets for versioning and publishing packages
