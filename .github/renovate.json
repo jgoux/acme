@@ -4,5 +4,10 @@
     "config:recommended",
     "group:allNonMajor"
   ],
-  "automerge": true
+  "automerge": true,
+  "timezone": "Europe/Paris",
+  "schedule": [
+    "after 9am",
+    "before 10am"
+  ]
 }
