@@ -4,9 +4,5 @@
     "config:recommended",
     "group:allNonMajor"
   ],
-  "schedule": [
-    "after 9am",
-    "before 10am"
-  ],
   "timezone": "Europe/Paris"
 }
