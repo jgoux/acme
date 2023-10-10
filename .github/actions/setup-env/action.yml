@@ -13,6 +13,3 @@ runs:
     - name: Pull .env files
       shell: bash
       run: pnpm env:pull
-      env:
-        INFISICAL_ENV: ${{ vars.INFISICAL_ENV }}
-        INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
