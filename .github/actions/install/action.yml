@@ -29,3 +29,6 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm install
+
+    - name: Setup environment variables
+      uses: ./.github/actions/setup-env

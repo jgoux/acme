@@ -15,8 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  INFISICAL_ENV: ${{ vars.INFISICAL_ENV }}
+  INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
   TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
 jobs:
   test-type-check:

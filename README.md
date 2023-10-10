@@ -3,6 +3,11 @@
 Pre-requisites:
 
 - Install [devenv](https://devenv.sh/getting-started/) and [direnv](https://devenv.sh/automatic-shell-activation/)
+- If you use infisical for managing your `.env` files:
+  - run `infisical login`
+  - run `infisical init`
+  - take a look at the `.env.example` files to fill your secrets
+  - run `pnpm env:pull` to create/update all the `.env` files
 
 Opiniated TypeScript monorepo architecture including:
 
@@ -24,9 +29,9 @@ Opiniated TypeScript monorepo architecture including:
 - [x] Shared core/SDK
 - [x] GitHub Action for tests
 - [x] Renovate for dependencies updates
+- [x] Environment variables management with infisical
 - [ ] GitHub Action for deployments
 - [ ] GitHub Action for previews
-- [ ] Environment variables management with dotenv-vault or infisical
 - [ ] Design-system / UI library
 - [ ] Changesets for versioning and publishing packages
 - [ ] Observability (Opentelemetry/Grafana Tempo)
