@@ -6,6 +6,8 @@ Pre-requisites:
 - If you use infisical for managing your `.env` files:
   - run `infisical login`
   - run `infisical init`
+  - take a look at the `.env.example` files to fill your secrets
+  - run `pnpm env:pull` to create/update all the `.env` files
 
 Opiniated TypeScript monorepo architecture including:
 
