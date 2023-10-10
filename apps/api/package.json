@@ -37,6 +37,7 @@
     "dev": "dotenv -c -- tsx --conditions development src/index.ts",
     "drizzle-kit": "dotenv -c -- drizzle-kit",
     "drizzle-kit:migrate": "dotenv -c -- tsx migrate.ts",
+    "env:pull": "infisical export --env=${INFISICAL_ENV:-dev} --path=/apps/api > .env",
     "lint": "eslint --cache . --max-warnings 0",
     "start": "node dist/index.js",
     "test": "vitest run",

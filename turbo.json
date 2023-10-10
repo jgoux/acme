@@ -16,6 +16,9 @@
       "cache": false,
       "persistent": true
     },
+    "env:pull": {
+      "cache": false
+    },
     "lint": {},
     "test": {
       "dependsOn": ["build"]

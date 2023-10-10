@@ -3,6 +3,9 @@
 Pre-requisites:
 
 - Install [devenv](https://devenv.sh/getting-started/) and [direnv](https://devenv.sh/automatic-shell-activation/)
+- If you use infisical for managing your `.env` files:
+  - run `infisical login`
+  - run `infisical init`
 
 Opiniated TypeScript monorepo architecture including:
 
