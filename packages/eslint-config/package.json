@@ -18,7 +18,7 @@
     "eslint-plugin-node-import": "1.0.4",
     "eslint-plugin-perfectionist": "2.1.0",
     "eslint-plugin-playwright": "0.16.0",
-    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.3",
