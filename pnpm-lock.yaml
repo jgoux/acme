@@ -18,8 +18,8 @@ importers:
         specifier: 8.51.0
         version: 8.51.0
       knip:
-        specifier: 2.33.2
-        version: 2.33.2
+        specifier: 2.33.3
+        version: 2.33.3
       skott:
         specifier: 0.31.3
         version: 0.31.3
@@ -9508,8 +9508,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knip@2.33.2:
-    resolution: {integrity: sha512-TiZU7EXqDsLDEcwn1TciXSZm3nORK4h+GHSQBgwnJzVZ4s+8WpK5QrwuVlRqGLm2Pa83WrxCSGGjJcHTeLbCQw==}
+  /knip@2.33.3:
+    resolution: {integrity: sha512-LOlkJKYUlhD9/YL5c+eR4yyiByKibazgZem45H0mzED4VNG0ajm8UYNAmLxAbQzzgRIiGAKeJMfzjXoeQ0IO7Q==}
     engines: {node: '>=16.17.0 <17 || >=18.6.0'}
     hasBin: true
     dependencies:
