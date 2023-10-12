@@ -18,8 +18,8 @@ importers:
         specifier: 8.51.0
         version: 8.51.0
       knip:
-        specifier: 2.33.1
-        version: 2.33.1
+        specifier: 2.33.2
+        version: 2.33.2
       skott:
         specifier: 0.31.3
         version: 0.31.3
@@ -199,7 +199,7 @@ importers:
         version: 4.1.0(vite@4.4.11)
       axe-playwright:
         specifier: 1.2.3
-        version: 1.2.3(playwright@1.38.1)
+        version: 1.2.3(playwright@1.39.0)
       eslint:
         specifier: 8.51.0
         version: 8.51.0
@@ -5993,7 +5993,7 @@ packages:
       rimraf: 3.0.2
     dev: true
 
-  /axe-playwright@1.2.3(playwright@1.38.1):
+  /axe-playwright@1.2.3(playwright@1.39.0):
     resolution: {integrity: sha512-bTxCTNp3kx6sQRMjmuLv8pG3+v+kOCvFXATim1+XUXzW6ykulbbuJdQfgB+vQPNAF9uvYbW2qrv9pg81ZSFV/A==}
     peerDependencies:
       playwright: '>1.0.0'
@@ -6001,7 +6001,7 @@ packages:
       axe-core: 4.8.1
       axe-html-reporter: 2.2.3(axe-core@4.8.1)
       picocolors: 1.0.0
-      playwright: 1.38.1
+      playwright: 1.39.0
     dev: true
 
   /axios@0.21.4:
@@ -10097,8 +10097,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knip@2.33.1:
-    resolution: {integrity: sha512-26DpeV4sOqFSEI9JC4PXRPnApnqAN4ja8ioqBBqVbDebYkOSEWj39024f3BK6k9im9l3o/HBpuvZegcC3RG2JQ==}
+  /knip@2.33.2:
+    resolution: {integrity: sha512-TiZU7EXqDsLDEcwn1TciXSZm3nORK4h+GHSQBgwnJzVZ4s+8WpK5QrwuVlRqGLm2Pa83WrxCSGGjJcHTeLbCQw==}
     engines: {node: '>=16.17.0 <17 || >=18.6.0'}
     hasBin: true
     dependencies:
