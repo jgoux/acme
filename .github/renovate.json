@@ -6,8 +6,6 @@
   ],
   "automerge": true,
   "timezone": "Europe/Paris",
-  "schedule": [
-    "after 9am",
-    "before 10am"
-  ]
+  "schedule": ["after 9am and before 10am"],
+  "postUpdateOptions": ["pnpmDedupe"]
 }
