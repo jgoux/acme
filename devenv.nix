@@ -6,6 +6,7 @@
 
   # https://devenv.sh/packages/
   packages = [
+    pkgs.infisical
     pkgs.git
     pkgs.nodejs_18
   ];
