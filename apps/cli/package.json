@@ -34,7 +34,7 @@
     "clean": "rm -rf .dts .turbo dist .eslintcache",
     "lint": "eslint --cache . --max-warnings 0",
     "start": "node dist/index.js",
-    "start:dev": "tsx --conditions development src/index.ts",
+    "start:dev": "bun src/index.ts",
     "test": "vitest run",
     "type-check": "tsc --build"
   }

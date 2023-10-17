@@ -8,6 +8,7 @@
   },
   "exports": {
     ".": {
+      "bun": "./src/router/index.ts",
       "development": "./src/router/index.ts"
     }
   },
@@ -34,7 +35,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "rm -rf .dts .turbo dist .eslintcache",
-    "dev": "dotenv -c -- tsx --conditions development src/index.ts",
+    "dev": "dotenv -c -- bun src/index.ts",
     "drizzle-kit": "dotenv -c -- drizzle-kit",
     "drizzle-kit:migrate": "dotenv -c -- tsx migrate.ts",
     "env:pull": "infisical export --env=${INFISICAL_ENV:-dev} --path=/apps/api > .env",
