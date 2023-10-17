@@ -30,6 +30,7 @@ Opiniated TypeScript monorepo architecture including:
 - [x] GitHub Action for tests
 - [x] Renovate for dependencies updates
 - [x] Environment variables management with infisical
+- [ ] Use Bun
 - [ ] GitHub Action for deployments
 - [ ] GitHub Action for previews
 - [ ] Design-system / UI library
