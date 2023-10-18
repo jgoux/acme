@@ -8,7 +8,6 @@
   packages = [
     pkgs.infisical
     pkgs.git
-    pkgs.nodejs_18
   ];
 
   # https://devenv.sh/services/
@@ -33,6 +32,9 @@
 
   # https://devenv.sh/languages/
   # languages.nix.enable = true;
+  languages.javascript.enable = true;
+  languages.javascript.package = pkgs.nodejs_18;
+  languages.javascript.corepack.enable = true;
 
   # https://devenv.sh/pre-commit-hooks/
   # pre-commit.hooks.shellcheck.enable = true;
