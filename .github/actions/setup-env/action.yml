@@ -1,12 +1,8 @@
 name: Setup environment variables
 
-defaults:
-  run:
-    shell: devenv shell bash -e {0}
-
 runs:
   using: "composite"
   steps:
     - name: Pull .env files
-      shell: bash
+      shell: devenv shell bash -e {0}
       run: pnpm env:pull

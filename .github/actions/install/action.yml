@@ -1,17 +1,15 @@
 name: Install dependencies
 
-defaults:
-  run:
-    shell: devenv shell bash -e {0}
-
 runs:
   using: "composite"
   steps:
     - name: Get pnpm store directory
+      shell: devenv shell bash -e {0}
       run: |
         echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
     - name: Setup pnpm cache
+      shell: devenv shell bash -e {0}
       uses: actions/cache@v3
       with:
         path: ${{ env.STORE_PATH }}
@@ -20,4 +18,5 @@ runs:
           ${{ runner.os }}-pnpm-store-
 
     - name: Install dependencies
+      shell: devenv shell bash -e {0}
       run: pnpm install
