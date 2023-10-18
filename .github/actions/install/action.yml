@@ -1,5 +1,9 @@
 name: Install dependencies
 
+defaults:
+  run:
+    shell: devenv shell bash -e {0}
+
 runs:
   using: "composite"
   steps:

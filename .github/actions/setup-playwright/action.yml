@@ -1,10 +1,13 @@
 name: Setup Playwright
 
+defaults:
+  run:
+    shell: devenv shell bash -e {0}
+
 runs:
   using: "composite"
   steps:
     - name: Store Playwright's Version
-      shell: bash
       run: |
         PLAYWRIGHT_VERSION=$(pnpm ls --recursive @playwright/test --json | jq --raw-output 'first(.[] | select(.devDependencies["@playwright/test"]? != null) | .devDependencies["@playwright/test"].version)')
         echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
@@ -18,5 +21,4 @@ runs:
 
     - name: Setup Playwright
       if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
-      shell: bash
       run: pnpm dlx playwright@${{ env.PLAYWRIGHT_VERSION }} install --with-deps

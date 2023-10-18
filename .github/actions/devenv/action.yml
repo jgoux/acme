@@ -13,6 +13,8 @@ runs:
 
     - name: Install devenv.sh
       run: nix profile install tarball+https://install.devenv.sh/latest
+      shell: bash
 
     - name: Build the devenv shell
       run: devenv ci
+      shell: bash
