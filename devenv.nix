@@ -31,7 +31,6 @@
   # '';
 
   # https://devenv.sh/languages/
-  # languages.nix.enable = true;
   languages.javascript.enable = true;
   languages.javascript.package = pkgs.nodejs_18;
   languages.javascript.corepack.enable = true;
