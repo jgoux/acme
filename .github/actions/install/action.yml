@@ -9,7 +9,6 @@ runs:
         echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
     - name: Setup pnpm cache
-      shell: devenv shell bash -e {0}
       uses: actions/cache@v3
       with:
         path: ${{ env.STORE_PATH }}
