@@ -33,8 +33,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup
-        uses: ./.github/actions/setup
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v6
+
+      - name: Cache Nix
+        uses: DeterminateSystems/magic-nix-cache-action@v2
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v12
+        with:
+          name: devenv
+
+      - name: Install devenv.sh
+        shell: bash
+        run: nix profile install tarball+https://install.devenv.sh/latest
+
+      - name: Build the devenv shell
+        shell: bash
+        run: devenv ci
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
+
+      - name: Setup environment variables
+        uses: ./.github/actions/setup-env
 
       - name: Type check
         run: pnpm type-check
