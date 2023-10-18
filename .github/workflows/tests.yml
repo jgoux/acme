@@ -14,6 +14,10 @@ concurrency:
   group: tests-${{ github.head_ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: devenv shell bash -e {0}
+
 env:
   INFISICAL_ENV: ${{ vars.INFISICAL_ENV }}
   INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
@@ -29,8 +33,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Type check
         run: pnpm type-check
@@ -46,8 +50,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Lint
         run: pnpm lint
@@ -63,8 +67,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Lint monorepo
         run: pnpm lint-monorepo
@@ -80,8 +84,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Run unit and integration tests
         run: pnpm test
@@ -97,8 +101,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Setup Playwright
         uses: ./.github/actions/setup-playwright
@@ -117,8 +121,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Setup Playwright
         uses: ./.github/actions/setup-playwright
@@ -137,8 +141,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Setup Playwright
         uses: ./.github/actions/setup-playwright

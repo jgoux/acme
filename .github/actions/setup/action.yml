@@ -1,0 +1,13 @@
+name: Setup
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup devenv
+      uses: ./.github/actions/devenv
+
+    - name: Install dependencies
+      uses: ./.github/actions/install
+
+    - name: Setup environment variables
+      uses: ./.github/actions/setup-env
