@@ -4,7 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: Install Nix
-      uses: DeterminateSystems/nix-installer-action@v6
+      uses: cachix/install-nix-action@v23
 
     - name: Setup Cachix
       uses: cachix/cachix-action@v12
