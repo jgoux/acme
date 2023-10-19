@@ -6,9 +6,6 @@ runs:
     - name: Install Nix
       uses: DeterminateSystems/nix-installer-action@v6
 
-    - name: Cache Nix
-      uses: DeterminateSystems/magic-nix-cache-action@v2
-
     - name: Setup Cachix
       uses: cachix/cachix-action@v12
       with:
