@@ -16,7 +16,7 @@ runs:
 
     - name: Install devenv.sh
       shell: bash
-      run: nix profile install tarball+https://install.devenv.sh/latest
+      run: nix profile install tarball+https://install.devenv.sh/python-rewrite
 
     - name: Build the devenv shell
       shell: bash
