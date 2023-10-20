@@ -24,7 +24,7 @@
     "eslint-plugin-react-refresh": "0.4.3",
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-unused-imports": "3.0.0",
-    "eslint-plugin-vitest": "0.3.2",
+    "eslint-plugin-vitest": "0.3.3",
     "globals": "13.23.0",
     "prettier": "3.0.3"
   },
