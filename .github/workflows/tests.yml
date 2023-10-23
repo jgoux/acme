@@ -123,9 +123,6 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Setup Playwright
-        uses: ./.github/actions/setup-playwright
-
       - name: Run components tests
         run: pnpm test:components
 
@@ -143,9 +140,6 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Setup Playwright
-        uses: ./.github/actions/setup-playwright
-
       - name: Run Storybook tests
         run: pnpm test:storybook
 
@@ -162,9 +156,6 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
-
-      - name: Setup Playwright
-        uses: ./.github/actions/setup-playwright
 
       - name: Run E2E tests
         run: pnpm test:e2e

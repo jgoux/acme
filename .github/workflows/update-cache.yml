@@ -23,6 +23,3 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
-
-      - name: Setup Playwright
-        uses: ./.github/actions/setup-playwright
