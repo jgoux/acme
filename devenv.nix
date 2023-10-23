@@ -2,12 +2,13 @@
 
 {
   # https://devenv.sh/basics/
-  # env.GREET = "devenv";
+  env.PLAYWRIGHT_BROWSERS_PATH="${pkgs.playwright-driver.browsers}";
 
   # https://devenv.sh/packages/
   packages = [
     pkgs.infisical
     pkgs.git
+    pkgs.playwright-driver
   ];
 
   # https://devenv.sh/services/
