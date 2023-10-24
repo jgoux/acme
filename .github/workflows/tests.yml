@@ -34,7 +34,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v23
+        uses: nixbuild/nix-quick-install-action@master
+        with:
+          load_nixConfig: false
+
+      - name: Restore and cache Nix store
+        uses: nix-community/cache-nix-action@v3
+        with:
+          key: cache-${{ runner.os }}-nix-store-${{ hashFiles('**/*.nix') }}
+          restore-keys: |
+            cache-${{ runner.os }}-nix-store-
 
       - name: Setup Cachix
         uses: cachix/cachix-action@v12

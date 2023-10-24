@@ -11,9 +11,9 @@ runs:
     - name: Restore and cache Nix store
       uses: nix-community/cache-nix-action@v3
       with:
-        key: cache-${{ matrix.os }}-${{ hashFiles('**/*.nix') }}
+        key: cache-${{ runner.os }}-nix-store-${{ hashFiles('**/*.nix') }}
         restore-keys: |
-          cache-${{ matrix.os }}-
+          cache-${{ runner.os }}-nix-store-
 
     - name: Setup Cachix
       uses: cachix/cachix-action@v12
