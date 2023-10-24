@@ -6,7 +6,7 @@ runs:
     - name: Install Nix
       uses: nixbuild/nix-quick-install-action@master
       with:
-        load_nixConfig: false
+        load_nixConfig: true
 
     - name: Restore and cache Nix store
       uses: nix-community/cache-nix-action@v3
