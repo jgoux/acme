@@ -5,8 +5,6 @@ runs:
   steps:
     - name: Install Nix
       uses: nixbuild/nix-quick-install-action@v25
-      with:
-        load_nixConfig: false
 
     - name: Restore and cache Nix store
       uses: nix-community/cache-nix-action@v3
