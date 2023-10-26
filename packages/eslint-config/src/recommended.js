@@ -56,6 +56,7 @@ export const recommended = [
       "@typescript-eslint/array-type": ["error", { default: "generic" }],
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/return-await": "error",
       "import/consistent-type-specifier-style": ["error", "prefer-inline"],
       "import/newline-after-import": "error",
       "import/no-duplicates": ["error", { "prefer-inline": true }],
