@@ -29,12 +29,10 @@
                   pkgs.git
                 ];
 
-                languages = {
-                  javascript = {
-                    enable = true;
-                    package = pkgs.nodejs_20;
-                    corepack.enable = true;
-                  };
+                languages.javascript = {
+                  enable = true;
+                  package = pkgs.nodejs_20;
+                  corepack.enable = true;
                 };
 
                 services.postgres = {
