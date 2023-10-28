@@ -11,7 +11,7 @@
     extra-substituters = "https://cache.nixos.org https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, flake-utils, devenv, ... } @ inputs:
+  outputs = { self, nixpkgs, flake-utils, devenv } @ inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = import nixpkgs { inherit system; };
       in {
