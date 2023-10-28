@@ -27,8 +27,15 @@
                 packages = [
                   pkgs.infisical
                   pkgs.git
-                  pkgs.nodejs_20
                 ];
+
+                languages = {
+                  javascript = {
+                    enable = true;
+                    package = pkgs.nodejs_20;
+                    corepack.enable = true;
+                  };
+                };
 
                 services.postgres = {
                   enable = true;
