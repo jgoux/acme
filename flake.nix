@@ -1,9 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     flake-utils.url = "github:numtide/flake-utils";
-
     devenv.url = "github:cachix/devenv/python-rewrite";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -13,15 +11,16 @@
     extra-substituters = "https://cache.nixos.org https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, flake-utils, devenv } @ inputs:
-
+  outputs = { self, nixpkgs, flake-utils, devenv, ... } @ inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = import nixpkgs { inherit system; };
       in {
+        packages = {
+          devenv-up = self.devShells.${system}.default.config.procfileScript;
+        };
         devShells.default = devenv.lib.mkShell {
           inherit inputs pkgs;
           modules = [ (import ./devenv.nix) ];
         };
       });
-
 }
