@@ -1,10 +1,26 @@
 {
   "version": "2.0.0",
+  "options": {
+    "shell": {
+      "executable": "nix",
+      "args": ["develop", "--impure", "--command", "bash", "-c"]
+    }
+  },
   "tasks": [
+    {
+      "label": "dev:env",
+      "type": "shell",
+      "command": "devenv up",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+      },
+    },
     {
       "label": "dev:type-check",
       "type": "shell",
-      "command": "devenv shell pnpm type-check --watch",
+      "command": "pnpm type-check --watch",
       "isBackground": true,
       "presentation": {
         "reveal": "always",
@@ -15,7 +31,7 @@
     {
       "label": "dev:api",
       "type": "shell",
-      "command": "devenv shell pnpm -F api dev",
+      "command": "pnpm -F api dev",
       "isBackground": true,
       "presentation": {
         "reveal": "always",
@@ -26,7 +42,7 @@
     {
       "label": "dev:web",
       "type": "shell",
-      "command": "devenv shell pnpm -F web dev",
+      "command": "pnpm -F web dev",
       "isBackground": true,
       "presentation": {
         "reveal": "always",
@@ -37,6 +53,7 @@
     {
       "label": "dev",
       "dependsOn": [
+        "dev:env",
         "dev:type-check",
         "dev:api",
         "dev:web"
