@@ -2,7 +2,7 @@
 
 Pre-requisites:
 
-- Install [devenv](https://devenv.sh/getting-started/) and [direnv](https://devenv.sh/automatic-shell-activation/)
+- Install [Nix](https://github.com/DeterminateSystems/nix-installer#usage) and optionally [direnv](https://github.com/nix-community/nix-direnv#with-nix-profile)
 - If you use infisical for managing your `.env` files:
   - run `infisical login`
   - run `infisical init`
