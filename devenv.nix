@@ -8,7 +8,7 @@
   packages = [
     pkgs.infisical
     pkgs.git
-    pkgs.nodejs_18
+    pkgs.nodejs_20
   ];
 
   # https://devenv.sh/services/
