@@ -16,11 +16,33 @@
       let pkgs = import nixpkgs { inherit system; };
       in {
         packages = {
+          # workaround for https://github.com/cachix/devenv/issues/756
           devenv-up = self.devShells.${system}.default.config.procfileScript;
         };
         devShells.default = devenv.lib.mkShell {
           inherit inputs pkgs;
-          modules = [ (import ./devenv.nix) ];
+          modules = [
+            ({ pkgs, ... }:
+              {
+                packages = [
+                  pkgs.infisical
+                  pkgs.git
+                  pkgs.nodejs_20
+                ];
+
+                services.postgres = {
+                  enable = true;
+                  package = pkgs.postgresql_16;
+                  initialDatabases = [{ name = "acme"; }];
+                  listen_addresses = "localhost";
+                  port = 2345;
+                  initialScript = ''
+                    CREATE USER postgres SUPERUSER;
+                  '';
+                };
+              }
+            )
+          ];
         };
       });
 }
