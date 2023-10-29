@@ -15,4 +15,4 @@ runs:
 
     - name: Build the devenv shell
       shell: nix develop --impure --command bash -c {0}
-      run: devenv version
+      run: echo "done"
