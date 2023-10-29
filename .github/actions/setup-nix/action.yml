@@ -22,5 +22,5 @@ runs:
         chmod +x $HOME/.local/bin/devenv
 
     - name: Build the devenv shell
-      shell: devenv {0}
+      shell: devenv
       run: echo 🚀
