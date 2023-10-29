@@ -16,7 +16,7 @@ concurrency:
 
 defaults:
   run:
-    shell: nix develop --impure --command bash -c {0}
+    shell: devenv {0}
 
 env:
   INFISICAL_ENV: ${{ vars.INFISICAL_ENV }}

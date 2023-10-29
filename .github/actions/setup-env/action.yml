@@ -4,5 +4,5 @@ runs:
   using: "composite"
   steps:
     - name: Pull .env files
-      shell: nix develop --impure --command bash -c {0}
+      shell: devenv {0}
       run: pnpm env:pull
