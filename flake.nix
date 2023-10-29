@@ -27,10 +27,7 @@
                 packages = [
                   pkgs.infisical
                   pkgs.git
-                  # pkgs.playwright-driver
                 ];
-
-                # env.PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
 
                 languages.javascript = {
                   enable = true;
