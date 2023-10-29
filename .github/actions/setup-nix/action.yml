@@ -13,12 +13,13 @@ runs:
         restore-keys: |
           cache-${{ runner.os }}-nix-store-
 
-    - name: Setup the custom shell
+    - name: Create a custom shell for devenv
       shell: bash
       run: |
-        which bash
-        which nix
+        echo "#\!/usr/bin/env bash" > /usr/bin/devenv
+        echo "nix develop --impure --command bash -c \"\$@\"" >> /usr/bin/devenv
+        chmod +x /usr/bin/devenv
 
     - name: Build the devenv shell
-      shell: nix develop --impure --command bash -c {0}
-      run: echo "hello world"
+      shell: devenv
+      run: echo 🚀
