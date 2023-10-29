@@ -16,6 +16,7 @@ runs:
     - name: Create a custom shell for devenv
       shell: bash
       run: |
+        mkdir -p $HOME/.local/bin
         echo "#\!/usr/bin/env bash" > $HOME/.local/bin/devenv
         echo "nix develop --impure --command bash -c \"\$@\"" >> $HOME/.local/bin/devenv
         chmod +x $HOME/.local/bin/devenv
