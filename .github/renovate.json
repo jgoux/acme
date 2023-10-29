@@ -7,5 +7,11 @@
   "automerge": true,
   "timezone": "Europe/Paris",
   "schedule": ["after 9am and before 10am"],
-  "postUpdateOptions": ["pnpmDedupe"]
+  "postUpdateOptions": ["pnpmDedupe"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@playwright/"],
+      "allowedVersions": "<1.39.0"
+    }
+  ]
 }
