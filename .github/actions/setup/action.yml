@@ -15,7 +15,7 @@ runs:
     - name: Install dependencies
       uses: ./.github/actions/install
 
-    - if: inputs.playwright == true
+    - if: inputs.playwright == 'true'
       name: Setup Playwright
       uses: ./.github/actions/setup-playwright
 
