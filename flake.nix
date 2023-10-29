@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    devenv.url = "github:cachix/devenv";
+    devenv.url = "github:cachix/devenv/python-rewrite";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
