@@ -21,8 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        uses: ./.github/actions/install
-
-      - name: Setup Playwright
-        uses: ./.github/actions/setup-playwright
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          playwright: true

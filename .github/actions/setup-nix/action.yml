@@ -1,0 +1,18 @@
+name: Setup Nix
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Nix
+      uses: nixbuild/nix-quick-install-action@v26
+
+    - name: Restore and cache Nix store
+      uses: nix-community/cache-nix-action@v4
+      with:
+        key: cache-${{ runner.os }}-nix-store-${{ hashFiles('**/*.nix') }}
+        restore-keys: |
+          cache-${{ runner.os }}-nix-store-
+
+    - name: Build the devenv shell
+      shell: nix develop --impure --command bash -c {0}
+      run: devenv version
