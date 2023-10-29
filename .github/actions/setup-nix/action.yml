@@ -17,11 +17,9 @@ runs:
       shell: bash
       run: |
         mkdir -p $HOME/.local/bin
-        echo "#\!/usr/bin/env bash" > $HOME/.local/bin/devenv
-        echo "cat \"\$1\"" >> $HOME/.local/bin/devenv
+        echo "#!/usr/bin/env bash" > $HOME/.local/bin/devenv
         echo "nix develop --impure --command bash \"\$1\"" >> $HOME/.local/bin/devenv
         chmod +x $HOME/.local/bin/devenv
-        cat $HOME/.local/bin/devenv
 
     - name: Build the devenv shell
       shell: devenv {0}
