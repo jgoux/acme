@@ -15,4 +15,4 @@ runs:
 
     - name: Build the devenv shell
       shell: bash
-      run: nix develop --impure --command bash -c "hello world"
+      run: nix develop --impure --command bash -c 'echo "hello world"'
