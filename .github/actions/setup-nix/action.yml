@@ -18,9 +18,10 @@ runs:
       run: |
         mkdir -p $HOME/.local/bin
         echo "#\!/usr/bin/env bash --noprofile --norc -e -o pipefail" > $HOME/.local/bin/devenv
+        echo "echo \"\$1\" >> $HOME/.local/bin/devenv
         echo "nix develop --impure --command bash -c \"\$@\"" >> $HOME/.local/bin/devenv
         chmod +x $HOME/.local/bin/devenv
 
     - name: Build the devenv shell
-      shell: devenv
+      shell: devenv {0}
       run: echo 🚀
