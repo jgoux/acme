@@ -16,11 +16,10 @@ runs:
     - name: Create a custom shell for devenv
       shell: bash
       run: |
-        echo $PATH
-        sudo echo "#\!/usr/bin/env bash" > /usr/bin/devenv
-        sudo echo "nix develop --impure --command bash -c \"\$@\"" >> /usr/bin/devenv
-        sudo chmod +x /usr/bin/devenv
+        echo "#\!/usr/bin/env bash" > $HOME/.local/bin/devenv
+        echo "nix develop --impure --command bash -c \"\$@\"" >> $HOME/.local/bin/devenv
+        chmod +x $HOME/.local/bin/devenv
 
     - name: Build the devenv shell
-      shell: devenv
+      shell: devenv {0}
       run: echo 🚀
