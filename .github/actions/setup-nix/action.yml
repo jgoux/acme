@@ -17,7 +17,7 @@ runs:
       shell: bash
       run: |
         mkdir -p $HOME/.local/bin
-        echo "#\!/usr/bin/env bash --noprofile --norc -e -o pipefail" > $HOME/.local/bin/devenv
+        echo "#\!/usr/bin/env bash" > $HOME/.local/bin/devenv
         echo "cat \"\$1\"" >> $HOME/.local/bin/devenv
         echo "nix develop --impure --command bash \"\$1\"" >> $HOME/.local/bin/devenv
         chmod +x $HOME/.local/bin/devenv
