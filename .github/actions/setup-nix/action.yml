@@ -14,5 +14,5 @@ runs:
           cache-${{ runner.os }}-nix-store-
 
     - name: Build the devenv shell
-      shell: bash
-      run: nix develop --impure --command bash -c 'echo "hello world"'
+      shell: PWD=$PWD nix develop --impure --command bash -c {0}
+      run: echo "hello world"
