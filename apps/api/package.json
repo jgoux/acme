@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@acme/core": "workspace:*",
-    "@trpc/server": "10.43.0",
+    "@trpc/server": "10.43.1",
     "drizzle-orm": "0.28.6",
     "postgres": "3.4.3",
     "valibot": "0.20.0"
