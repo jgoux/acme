@@ -47,6 +47,6 @@
     "storybook": "7.5.3",
     "typescript": "5.2.2",
     "vite": "4.5.0",
-    "vite-bundle-visualizer": "0.10.1"
+    "vite-bundle-visualizer": "0.11.0"
   }
 }
