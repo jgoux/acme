@@ -18,8 +18,8 @@ importers:
         specifier: 8.53.0
         version: 8.53.0
       knip:
-        specifier: 2.40.2
-        version: 2.40.2
+        specifier: 2.41.0
+        version: 2.41.0
       skott:
         specifier: 0.31.3
         version: 0.31.3
@@ -39,8 +39,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/core
       '@trpc/server':
-        specifier: 10.43.2
-        version: 10.43.2
+        specifier: 10.43.3
+        version: 10.43.3
       drizzle-orm:
         specifier: 0.29.0
         version: 0.29.0(postgres@3.4.3)
@@ -76,8 +76,8 @@ importers:
         specifier: 8.53.0
         version: 8.53.0
       tsx:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.1.1
+        version: 4.1.1
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -94,11 +94,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/core
       '@trpc/client':
-        specifier: 10.43.2
-        version: 10.43.2(@trpc/server@10.43.2)
+        specifier: 10.43.3
+        version: 10.43.3(@trpc/server@10.43.3)
       '@trpc/server':
-        specifier: 10.43.2
-        version: 10.43.2
+        specifier: 10.43.3
+        version: 10.43.3
       yargs:
         specifier: 17.7.2
         version: 17.7.2
@@ -125,8 +125,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       tsx:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.1.1
+        version: 4.1.1
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -4668,16 +4668,16 @@ packages:
     resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
     dev: true
 
-  /@trpc/client@10.43.2(@trpc/server@10.43.2):
-    resolution: {integrity: sha512-3wbuvu38lZi37iG+36IsTE/SoqNyrwnGH6Q9TndaOdF/7vkQoofTsVWTaNuBsStkpj6xbvFUHZbCBd7kpIVL1A==}
+  /@trpc/client@10.43.3(@trpc/server@10.43.3):
+    resolution: {integrity: sha512-r/aE1l2iybJMlXCf+KWqSQpIloOqw/3jQhZD8F4VpvczWPI5fEQCmZZuPHAz2L/PiGE5K/ZwXQrJsT207ZQ2AQ==}
     peerDependencies:
-      '@trpc/server': 10.43.2
+      '@trpc/server': 10.43.3
     dependencies:
-      '@trpc/server': 10.43.2
+      '@trpc/server': 10.43.3
     dev: false
 
-  /@trpc/server@10.43.2:
-    resolution: {integrity: sha512-88C9sFCdmk1IFL4ub7gqRPM0lFVmyZPjxpOcYy4GZw5yJif/FLyFuzSJiwsy9NygHOjqpfCxsDrLYsFr4eANPA==}
+  /@trpc/server@10.43.3:
+    resolution: {integrity: sha512-U7HsNtgjupNvPzH6ho4rPlIXZ2t5PctOH6pmFX4jv4YJi98RjGuOhHUNhiiVb8KUw6Kuh5EHTAv7cUV+igbMuQ==}
     engines: {node: '>=18.0.0'}
     dev: false
 
@@ -9772,8 +9772,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knip@2.40.2:
-    resolution: {integrity: sha512-05YYZSPNIzilP+srnrwfZjrfcmrWsEFO8729+lD6nc3GsHARmyQlsfUjXcQgDl0BrNkIktbIDcpLUhv19kIOUw==}
+  /knip@2.41.0:
+    resolution: {integrity: sha512-gjEfdRxkL9jRhV/RFc0cDIjTO7dPFU3PxS4KzELJ1tX1zdRVfhATORPcpX0B2rRSowPUFXN9pQ8ce4ux5+C/kw==}
     engines: {node: '>=16.17.0 <17 || >=18.6.0'}
     hasBin: true
     dependencies:
@@ -12468,8 +12468,8 @@ packages:
       typescript: 5.2.2
     dev: false
 
-  /tsx@4.0.0:
-    resolution: {integrity: sha512-jd3C5kw9tR68gtvqHUYo/2IwxaA46/CyKvcVQ4DsKRAPb19/vWgl7zF9mYNjFRY6KcGKiwne41RU91ll31IggQ==}
+  /tsx@4.1.1:
+    resolution: {integrity: sha512-zyPn5BFMB0TB5kMLbYPNx4x/oL/oSlaecdKCv6WeJ0TeSEfx8RTJWjuB5TZ2dSewktgfBsBO/HNA9mrMWqLXMA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
