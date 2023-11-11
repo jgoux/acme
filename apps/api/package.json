@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@acme/core": "workspace:*",
-    "@trpc/server": "10.43.2",
+    "@trpc/server": "10.43.3",
     "drizzle-orm": "0.29.0",
     "postgres": "3.4.3",
     "valibot": "0.20.1"
@@ -27,7 +27,7 @@
     "dotenv-cli": "7.3.0",
     "drizzle-kit": "0.20.1",
     "eslint": "8.53.0",
-    "tsx": "4.0.0",
+    "tsx": "4.1.1",
     "typescript": "5.2.2",
     "vitest": "0.34.6"
   },
