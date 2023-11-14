@@ -24,7 +24,7 @@
     "@types/yargs": "17.0.31",
     "eslint": "8.53.0",
     "execa": "8.0.1",
-    "tsx": "4.1.1",
+    "tsx": "4.1.2",
     "typescript": "5.2.2",
     "vitest": "0.34.6",
     "wait-for-localhost": "4.0.1"

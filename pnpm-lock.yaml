@@ -76,8 +76,8 @@ importers:
         specifier: 8.53.0
         version: 8.53.0
       tsx:
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.1.2
+        version: 4.1.2
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -125,8 +125,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       tsx:
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.1.2
+        version: 4.1.2
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -177,8 +177,8 @@ importers:
         specifier: 7.5.3
         version: 7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)(vite@4.5.0)
       '@storybook/test-runner':
-        specifier: 0.14.0
-        version: 0.14.0(@types/node@20.9.0)
+        specifier: 0.14.1
+        version: 0.14.1(@types/node@20.9.0)
       '@storybook/testing-library':
         specifier: 0.2.2
         version: 0.2.2
@@ -4407,8 +4407,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/test-runner@0.14.0(@types/node@20.9.0):
-    resolution: {integrity: sha512-gqh1q2ac84VE5tU/6Iz5HkvLcfaC91DnhtfeRDoacMlFYJhGs+xu/zjQYyzCr3MPQykm09X3Dol0BjAJtCGmDg==}
+  /@storybook/test-runner@0.14.1(@types/node@20.9.0):
+    resolution: {integrity: sha512-8W4K/dttKnecXVb1zdqebnEBWk2LmMvQPBRoFtljUkARE1+wr6HlWOBoy55QClIbssVSxrx1LvOraVy7VmS/zw==}
     engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
@@ -12468,8 +12468,8 @@ packages:
       typescript: 5.2.2
     dev: false
 
-  /tsx@4.1.1:
-    resolution: {integrity: sha512-zyPn5BFMB0TB5kMLbYPNx4x/oL/oSlaecdKCv6WeJ0TeSEfx8RTJWjuB5TZ2dSewktgfBsBO/HNA9mrMWqLXMA==}
+  /tsx@4.1.2:
+    resolution: {integrity: sha512-1spM1bFV6MP2s4tO4tDC7g52fsaFdtEWdO4GfGdqi20qUgPbnAJqixOyIAvCSx1DDj3YIUB4CD06owTWUsOAuQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
