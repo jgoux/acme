@@ -31,7 +31,7 @@
     "update-deps": "pnpm update \"!@types/node\" --interactive --recursive --latest",
     "visualize-deps": "skott --displayMode=webapp --trackBuiltinDependencies --trackThirdPartyDependencies"
   },
-  "packageManager": "pnpm@8.10.4",
+  "packageManager": "pnpm@8.10.5",
   "engines": {
     "node": ">=20.9.0"
   }
