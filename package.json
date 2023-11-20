@@ -8,8 +8,8 @@
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "eslint": "8.53.0",
-    "knip": "2.41.2",
+    "eslint": "8.54.0",
+    "knip": "2.41.3",
     "skott": "0.31.3",
     "turbo": "1.10.16",
     "typescript": "5.2.2",
