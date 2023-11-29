@@ -9,10 +9,10 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "eslint": "8.54.0",
-    "knip": "2.41.3",
+    "knip": "2.43.0",
     "skott": "0.31.3",
     "turbo": "1.10.16",
-    "typescript": "5.2.2",
+    "typescript": "5.3.2",
     "vitest": "0.34.6"
   },
   "scripts": {
@@ -31,7 +31,7 @@
     "update-deps": "pnpm update \"!@types/node\" --interactive --recursive --latest",
     "visualize-deps": "skott --displayMode=webapp --trackBuiltinDependencies --trackThirdPartyDependencies"
   },
-  "packageManager": "pnpm@8.10.5",
+  "packageManager": "pnpm@8.11.0",
   "engines": {
     "node": ">=20.9.0"
   }
