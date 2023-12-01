@@ -1,4 +1,5 @@
 {
+  "name": "@acme/root",
   "private": true,
   "type": "module",
   "workspaces": [
