@@ -18,11 +18,11 @@ importers:
         specifier: 8.56.0
         version: 8.56.0
       knip:
-        specifier: 3.8.3
-        version: 3.8.3(@types/node@20.10.5)(typescript@5.3.3)
+        specifier: 3.8.4
+        version: 3.8.4(@types/node@20.10.5)(typescript@5.3.3)
       skott:
-        specifier: 0.31.3
-        version: 0.31.3
+        specifier: 0.31.4
+        version: 0.31.4
       turbo:
         specifier: 1.11.2
         version: 1.11.2
@@ -273,8 +273,8 @@ importers:
         specifier: 0.20.0
         version: 0.20.0(eslint@8.56.0)
       eslint-plugin-prettier:
-        specifier: 5.1.0
-        version: 5.1.0(@types/eslint@8.56.0)(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
+        specifier: 5.1.1
+        version: 5.1.1(@types/eslint@8.56.0)(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
       eslint-plugin-react:
         specifier: 7.33.2
         version: 7.33.2(eslint@8.56.0)
@@ -7544,8 +7544,8 @@ packages:
       globals: 13.24.0
     dev: false
 
-  /eslint-plugin-prettier@5.1.0(@types/eslint@8.56.0)(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
-    resolution: {integrity: sha512-hQc+2zbnMeXcIkg+pKZtVa+3Yqx4WY7SMkn1PLZ4VbBEU7jJIpVn9347P8BBhTbz6ne85aXvQf30kvexcqBeWw==}
+  /eslint-plugin-prettier@5.1.1(@types/eslint@8.56.0)(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
+    resolution: {integrity: sha512-WQpV3mSmIobb77s4qiCZu3dBrZZ0rj8ckSfBtRrgNK9Wnh2s3eiaxNTWloz1LJ1WtvqZES/PAI7PLvsrGt/CEA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -8248,8 +8248,8 @@ packages:
       minipass: 3.3.6
     dev: true
 
-  /fs-tree-structure@0.0.3:
-    resolution: {integrity: sha512-LbKI+jcVkKxcIsQERa06L+04Po3WYZ+FJohUuhTwKbUfKL3yZNaMtUQTlEPTsli+iHiEIgnHXP8EEpjRwuC5Nw==}
+  /fs-tree-structure@0.0.4:
+    resolution: {integrity: sha512-pAtZat+Msvc34RPo3ObNCnWy0/iV8mopFBPFDNSEN5PX9uhWKe0R1fdDUNFTTA6XpLNOHH5XjmpuJkxk7qkiAA==}
     dependencies:
       lodash.set: 4.3.2
     dev: true
@@ -9925,8 +9925,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knip@3.8.3(@types/node@20.10.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-KtVyLMig4C9m1y4YZZfZzqzY+/o7cAgHai28eUnqfjfWBCXGHK+HdeyO86CB5bam+RxFMzAysZFU/avOJlggSA==}
+  /knip@3.8.4(@types/node@20.10.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-pmgUD7LSe3tRf84qogBnIe8uXcfTR+bjbVwW+TrKeHLayOhpw5Xa2vSqXOQ68fMQ8lBrpp8cW+c+hsYMc2YE+w==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
@@ -12050,8 +12050,8 @@ packages:
     resolution: {integrity: sha512-855yMtsRqLNFXc/RMV3l/cipSuPbubdM4KhR9gBdxlOqTAhwTtBonpT7EMwaffFoQxdcVz/QkE2LUez7N3xCOw==}
     dev: true
 
-  /skott@0.31.3:
-    resolution: {integrity: sha512-q1nz7b1wAf1KqBevG2Dnyct6EBNBcjxuCdGB2gSGlPi41mGyo5OfurdXw+snAOI8OMuuRk7rmh9z5VpsRxnXnA==}
+  /skott@0.31.4:
+    resolution: {integrity: sha512-SeXTm/wYXNpAKWyQytGfXl5JRgLXQ4FP9+NwbloGrf+Tut2UcX01SQe8DMT6mfQBYIFw4GwX9z7vUMZH1ZzGpQ==}
     hasBin: true
     dependencies:
       '@effect/data': 0.4.1
@@ -12063,7 +12063,7 @@ packages:
       digraph-js: 2.2.3
       estree-walker: 3.0.3
       fp-ts: 2.5.0
-      fs-tree-structure: 0.0.3
+      fs-tree-structure: 0.0.4
       ignore-walk: 6.0.3
       io-ts: 2.2.20(fp-ts@2.5.0)
       is-wsl: 3.1.0
