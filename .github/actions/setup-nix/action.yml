@@ -9,9 +9,8 @@ runs:
     - name: Restore and cache Nix store
       uses: nix-community/cache-nix-action@v5
       with:
-        key: cache-${{ runner.os }}-nix-store-${{ hashFiles('**/*.nix') }}
-        restore-keys: |
-          cache-${{ runner.os }}-nix-store-
+        primary-key: cache-${{ runner.os }}-nix-store-${{ hashFiles('**/*.nix') }}
+        restore-prefixes-first-match: cache-${{ runner.os }}-nix-store-
 
     - name: Create a custom shell for devenv
       shell: bash
