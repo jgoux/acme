@@ -16,13 +16,13 @@
     "@trpc/server": "10.45.0",
     "drizzle-orm": "0.29.3",
     "postgres": "3.4.3",
-    "valibot": "0.27.0"
+    "valibot": "0.27.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.11.7",
+    "@types/node": "20.11.10",
     "dotenv": "16.4.1",
     "dotenv-cli": "7.3.0",
     "drizzle-kit": "0.20.13",
