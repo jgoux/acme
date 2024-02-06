@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@acme/core": "workspace:*",
-    "@trpc/server": "10.45.0",
+    "@trpc/server": "10.45.1",
     "drizzle-orm": "0.29.3",
     "postgres": "3.4.3",
-    "valibot": "0.27.1"
+    "valibot": "0.28.0"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

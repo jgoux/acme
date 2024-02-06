@@ -12,8 +12,8 @@
   "dependencies": {
     "@acme/api": "workspace:*",
     "@acme/core": "workspace:*",
-    "@trpc/client": "10.45.0",
-    "@trpc/server": "10.45.0",
+    "@trpc/client": "10.45.1",
+    "@trpc/server": "10.45.1",
     "yargs": "17.7.2"
   },
   "devDependencies": {
