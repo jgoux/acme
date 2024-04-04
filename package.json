@@ -12,7 +12,7 @@
     "eslint": "8.57.0",
     "knip": "4.6.0",
     "skott": "0.33.2",
-    "turbo": "1.13.0",
+    "turbo": "1.13.2",
     "typescript": "5.4.3",
     "vitest": "1.4.0"
   },
@@ -32,7 +32,7 @@
     "update-deps": "pnpm update \"!@types/node\" --interactive --recursive --latest",
     "visualize-deps": "skott --displayMode=webapp --trackBuiltinDependencies --trackThirdPartyDependencies"
   },
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=20.9.0"
   }
