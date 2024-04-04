@@ -14,7 +14,7 @@
   "dependencies": {
     "@acme/core": "workspace:*",
     "@trpc/server": "10.45.2",
-    "drizzle-orm": "0.30.4",
+    "drizzle-orm": "0.30.7",
     "postgres": "3.4.4",
     "valibot": "0.30.0"
   },
@@ -22,7 +22,7 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.11.30",
+    "@types/node": "20.12.4",
     "dotenv": "16.4.5",
     "dotenv-cli": "7.4.1",
     "drizzle-kit": "0.20.14",
