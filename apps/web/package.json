@@ -37,16 +37,16 @@
     "@storybook/test-runner": "0.17.0",
     "@storybook/testing-library": "0.2.2",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.11.30",
-    "@types/react": "18.2.67",
-    "@types/react-dom": "18.2.22",
+    "@types/node": "20.12.4",
+    "@types/react": "18.2.74",
+    "@types/react-dom": "18.2.24",
     "@vitejs/plugin-react": "4.2.1",
     "axe-playwright": "2.0.1",
     "eslint": "8.57.0",
     "start-server-and-test": "2.0.3",
     "storybook": "7.6.17",
     "typescript": "5.4.3",
-    "vite": "5.2.6",
+    "vite": "5.2.8",
     "vite-bundle-visualizer": "1.1.0"
   }
 }
