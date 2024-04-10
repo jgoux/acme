@@ -22,13 +22,13 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.12.4",
+    "@types/node": "20.12.7",
     "dotenv": "16.4.5",
     "dotenv-cli": "7.4.1",
     "drizzle-kit": "0.20.14",
     "eslint": "8.57.0",
-    "tsx": "4.7.1",
-    "typescript": "5.4.3",
+    "tsx": "4.7.2",
+    "typescript": "5.4.4",
     "vitest": "1.4.0"
   },
   "scripts": {
