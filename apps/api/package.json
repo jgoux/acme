@@ -14,7 +14,7 @@
   "dependencies": {
     "@acme/core": "workspace:*",
     "@trpc/server": "10.45.2",
-    "drizzle-orm": "0.30.7",
+    "drizzle-orm": "0.30.8",
     "postgres": "3.4.4",
     "valibot": "0.30.0"
   },
@@ -28,8 +28,8 @@
     "drizzle-kit": "0.20.14",
     "eslint": "8.57.0",
     "tsx": "4.7.2",
-    "typescript": "5.4.4",
-    "vitest": "1.4.0"
+    "typescript": "5.4.5",
+    "vitest": "1.5.0"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
