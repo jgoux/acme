@@ -42,7 +42,7 @@
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.2.1",
     "axe-playwright": "2.0.1",
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "start-server-and-test": "2.0.3",
     "storybook": "7.6.19",
     "typescript": "5.4.5",

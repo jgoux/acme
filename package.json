@@ -9,7 +9,7 @@
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "knip": "5.12.1",
     "skott": "0.33.2",
     "turbo": "1.13.3",
