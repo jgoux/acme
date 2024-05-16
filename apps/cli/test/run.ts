@@ -1,7 +1,7 @@
-import { type Options, execaCommand } from "execa";
+import { type Options, type Result, execaCommand } from "execa";
 import { fileURLToPath } from "node:url";
 
-export async function run(command: string, options?: Options) {
+export async function run(command: string, options?: Options): Promise<Result> {
   const processedCommand = command.replace(
     "acme",
     process.env["CI"]

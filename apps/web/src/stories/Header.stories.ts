@@ -20,7 +20,16 @@ export const LoggedIn: Story = {
     user: {
       name: "Jane Doe",
     },
+    onCreateAccount: () => void 0,
+    onLogin: () => void 0,
+    onLogout: () => void 0,
   },
 };
 
-export const LoggedOut: Story = {};
+export const LoggedOut: Story = {
+  args: {
+    onCreateAccount: () => void 0,
+    onLogin: () => void 0,
+    onLogout: () => void 0,
+  },
+};
