@@ -9,6 +9,7 @@ import unusedImportsPlugin from "eslint-plugin-unused-imports";
 import vitestPlugin from "eslint-plugin-vitest";
 import globals from "globals";
 
+/** @type {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} */
 export const recommended = [
   {
     ignores: ["**/{.cache,.dts,dist,node_modules,playwright,test-results}"],
