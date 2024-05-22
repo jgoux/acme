@@ -7,7 +7,7 @@
     "./react": "./tsconfig.react.json"
   },
   "dependencies": {
-    "@tsconfig/node18": "18.2.4",
+    "@tsconfig/node20": "20.1.4",
     "@tsconfig/strictest": "2.0.5",
     "@tsconfig/vite-react": "3.0.2"
   }
