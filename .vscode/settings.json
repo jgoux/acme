@@ -2,7 +2,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
   "eslint.workingDirectories": [
     {
       "pattern": "./apps/*"
@@ -13,8 +13,4 @@
   ],
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "vitest.include": [
-    "apps/{api,cli}/**/*.test.ts",
-    "packages/core/**/*.test.ts",
-  ],
 }
