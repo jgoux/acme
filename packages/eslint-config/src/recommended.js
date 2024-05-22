@@ -1,7 +1,7 @@
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import prettierConfig from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-i";
+import importPlugin from "eslint-plugin-import-x";
 import nodeImportPlugin from "eslint-plugin-node-import";
 import prettierPlugin from "eslint-plugin-prettier";
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
@@ -32,14 +32,14 @@ export const recommended = [
       },
     },
     settings: {
-      "import/parsers": {
+      "import-x/parsers": {
         "@typescript-eslint/parser": [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx", ".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
       },
-      "import/external-module-folders": ["node_modules", "node_modules/@types"],
+      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
-      import: importPlugin,
+      "import-x": importPlugin,
       "node-import": nodeImportPlugin,
       perfectionist: perfectionistPlugin,
       prettier: prettierPlugin,
@@ -56,10 +56,10 @@ export const recommended = [
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/return-await": "error",
-      "import/consistent-type-specifier-style": ["error", "prefer-inline"],
-      "import/newline-after-import": "error",
-      "import/no-duplicates": ["error", { "prefer-inline": true }],
-      "import/no-unresolved": "off",
+      "import-x/consistent-type-specifier-style": ["error", "prefer-inline"],
+      "import-x/newline-after-import": "error",
+      "import-x/no-duplicates": ["error", { "prefer-inline": true }],
+      "import-x/no-unresolved": "off",
       "node-import/prefer-node-protocol": "error",
       "no-restricted-syntax": [
         "error",
