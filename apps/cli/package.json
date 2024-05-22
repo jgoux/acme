@@ -24,10 +24,10 @@
     "@types/yargs": "17.0.32",
     "eslint": "8.57.0",
     "execa": "9.1.0",
-    "tsx": "4.10.3",
-    "typescript": "5.5.0-dev.20240516",
+    "tsx": "4.10.5",
+    "typescript": "5.5.0-dev.20240522",
     "vitest": "1.6.0",
-    "wait-for-localhost": "4.0.1"
+    "wait-for-localhost": "4.1.0"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
