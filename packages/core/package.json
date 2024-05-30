@@ -19,7 +19,7 @@
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "20.12.13",
     "eslint": "9.3.0",
-    "typescript": "5.5.0-dev.20240522",
+    "typescript": "5.5.0-dev.20240523",
     "vitest": "1.6.0"
   },
   "scripts": {

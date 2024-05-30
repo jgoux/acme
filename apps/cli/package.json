@@ -25,7 +25,7 @@
     "eslint": "9.3.0",
     "execa": "9.1.0",
     "tsx": "4.11.0",
-    "typescript": "5.5.0-dev.20240522",
+    "typescript": "5.5.0-dev.20240523",
     "vitest": "1.6.0",
     "wait-for-localhost": "4.1.0"
   },
