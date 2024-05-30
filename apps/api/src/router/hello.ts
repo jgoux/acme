@@ -1,4 +1,4 @@
-import { hello } from "@acme/core";
+import { Fish, hello } from "@acme/core";
 import * as v from "valibot";
 import { t } from "#config/trpc.js";
 
@@ -12,5 +12,7 @@ export const helloProcedure = t.procedure
     ),
   )
   .query(({ input }) => {
+    const fish = new Fish(input.name);
+    fish.speak();
     return hello(input.name);
   });
