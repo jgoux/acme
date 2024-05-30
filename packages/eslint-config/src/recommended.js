@@ -1,91 +1,99 @@
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
-import prettierConfig from "eslint-config-prettier";
+// @ts-check
+import eslint from '@eslint/js';
 import importPlugin from "eslint-plugin-import-x";
 import nodeImportPlugin from "eslint-plugin-node-import";
-import prettierPlugin from "eslint-plugin-prettier";
+import prettierPluginRecommended from "eslint-plugin-prettier/recommended";
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import unusedImportsPlugin from "eslint-plugin-unused-imports";
 import vitestPlugin from "eslint-plugin-vitest";
 import globals from "globals";
+import tseslint from 'typescript-eslint';
 
-/** @type {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} */
-export const recommended = [
+export const recommended = tseslint.config(
   {
     ignores: ["**/{.cache,.dts,dist,node_modules,playwright,test-results}"],
-  },
-  {
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
   },
+  eslint.configs.recommended,
   {
-    files: ["**/*.?([cm])[jt]s?(x)"],
+    extends: [
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
+    ],
     languageOptions: {
-      globals: {
-        ...globals.node,
-      },
-      parser: typescriptParser,
+      globals: globals.node,
       parserOptions: {
         sourceType: "module",
         ecmaVersion: "latest",
         project: "./tsconfig.json",
       },
     },
-    settings: {
-      "import-x/parsers": {
-        "@typescript-eslint/parser": [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx", ".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
-      },
-      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
-    },
-    plugins: {
-      "@typescript-eslint": typescriptPlugin,
-      "import-x": importPlugin,
-      "node-import": nodeImportPlugin,
-      perfectionist: perfectionistPlugin,
-      prettier: prettierPlugin,
-      "unused-imports": unusedImportsPlugin,
-    },
     rules: {
-      ...typescriptPlugin.configs["eslint-recommended"].rules,
-      ...typescriptPlugin.configs["strict-type-checked"].rules,
-      ...typescriptPlugin.configs["stylistic-type-checked"].rules,
-      ...importPlugin.configs.recommended.rules,
-      ...importPlugin.configs.typescript.rules,
-      ...perfectionistPlugin.configs["recommended-natural"].rules,
       "@typescript-eslint/array-type": ["error", { default: "generic" }],
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/return-await": "error",
-      "import-x/consistent-type-specifier-style": ["error", "prefer-inline"],
-      "import-x/newline-after-import": "error",
-      "import-x/no-duplicates": ["error", { "prefer-inline": true }],
-      "import-x/no-unresolved": "off",
-      "node-import/prefer-node-protocol": "error",
-      "no-restricted-syntax": [
-        "error",
+      "no-restricted-syntax": ["error",
         {
           "selector": "TSEnumDeclaration",
           "message": "Use const object instead of enum."
         }
       ],
+    }
+  },
+  {
+    plugins: {
+      "import-x": importPlugin,
+    },
+    settings: {
+      ...importPlugin.configs.typescript.settings,
+      "import-x/parsers": {
+        "@typescript-eslint/parser": [".js", ".cjs", ".mjs", ".jsx", ".cjsx", ".mjsx", ".ts", ".cts", ".mts", ".tsx", ".ctsx", ".mtsx"],
+      },
+    },
+    rules: {
+      ...importPlugin.configs.recommended.rules,
+      ...importPlugin.configs.typescript.rules,
+      "import-x/consistent-type-specifier-style": ["error", "prefer-inline"],
+      "import-x/newline-after-import": "error",
+      "import-x/no-duplicates": ["error", { "prefer-inline": true }],
+      "import-x/no-unresolved": "off",
+    }
+  },
+  {
+    plugins: {
+      "node-import": nodeImportPlugin,
+    },
+    rules: {
+      "node-import/prefer-node-protocol": "error",
+    }
+  },
+  {
+    plugins: {
+      "unused-imports": unusedImportsPlugin,
+    },
+    rules: {
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": ["error", { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }],
+    }
+  },
+  {
+    ...perfectionistPlugin.configs['recommended-natural'],
+    plugins: {
+      "perfectionist": perfectionistPlugin,
+    },
+    rules: {
+      ...perfectionistPlugin.configs['recommended-natural'].rules,
       "perfectionist/sort-imports": ["error", {
         ...perfectionistPlugin.configs["recommended-natural"].rules["perfectionist/sort-imports"][1],
         "newlines-between": "never",
         "internal-pattern": ["#*", "#*/**"],
       }],
       "perfectionist/sort-objects": "off",
-      "unused-imports/no-unused-imports": "error",
-      "unused-imports/no-unused-vars": ["error", { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }],
-      ...prettierConfig.rules,
-      ...prettierPlugin.configs.recommended.rules,
-    },
+    }
   },
-  {
-    files: ["**/?(*.)+(test).?([cm])[jt]s?(x)"],
-    plugins: {
-      vitest: vitestPlugin,
-    },
-    rules: vitestPlugin.configs.recommended.rules
-  }
-];
+  vitestPlugin.configs.recommended,
+  prettierPluginRecommended,
+);
