@@ -12,6 +12,8 @@ import tseslint from 'typescript-eslint';
 export const recommended = tseslint.config(
   {
     ignores: ["**/{.cache,.dts,dist,node_modules,playwright,test-results}"],
+  },
+  {
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
