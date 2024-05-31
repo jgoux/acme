@@ -16,7 +16,7 @@
     "@trpc/server": "10.45.2",
     "drizzle-orm": "0.30.10",
     "postgres": "3.4.4",
-    "valibot": "0.31.0-rc.6"
+    "valibot": "0.31.0-rc.7"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
@@ -28,7 +28,7 @@
     "drizzle-kit": "0.21.4",
     "eslint": "9.3.0",
     "tsx": "4.11.0",
-    "typescript": "5.5.0-dev.20240523",
+    "typescript": "5.5.0-dev.20240531",
     "vitest": "1.6.0"
   },
   "scripts": {
