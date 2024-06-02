@@ -28,7 +28,7 @@
     "drizzle-kit": "0.22.1",
     "eslint": "9.4.0",
     "tsx": "4.11.0",
-    "typescript": "5.5.0-dev.20240601",
+    "typescript": "5.5.0-dev.20240602",
     "vitest": "1.6.0"
   },
   "scripts": {
