@@ -13,7 +13,7 @@
     "knip": "5.17.3",
     "skott": "0.33.2",
     "turbo": "1.13.3",
-    "typescript": "5.5.0-dev.20240602",
+    "typescript": "5.5.0-dev.20240603",
     "vitest": "1.6.0"
   },
   "scripts": {
