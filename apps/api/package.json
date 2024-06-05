@@ -14,18 +14,18 @@
   "dependencies": {
     "@acme/core": "workspace:*",
     "@trpc/server": "10.45.2",
-    "drizzle-orm": "0.31.0",
+    "drizzle-orm": "0.31.1",
     "postgres": "3.4.4",
-    "valibot": "0.31.0-rc.9"
+    "valibot": "0.31.0-rc.12"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.14.0",
+    "@types/node": "20.14.1",
     "dotenv": "16.4.5",
     "dotenv-cli": "7.4.2",
-    "drizzle-kit": "0.22.1",
+    "drizzle-kit": "0.22.2",
     "eslint": "9.4.0",
     "tsx": "4.11.2",
     "typescript": "5.5.0-dev.20240603",
