@@ -17,9 +17,9 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.14.2",
+    "@types/node": "20.14.7",
     "eslint": "9.5.0",
-    "typescript": "5.5.0-dev.20240603",
+    "typescript": "5.5.2",
     "vitest": "1.6.0"
   },
   "scripts": {
