@@ -20,7 +20,7 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.14.8",
+    "@types/node": "20.14.9",
     "@types/yargs": "17.0.32",
     "eslint": "9.5.0",
     "execa": "9.3.0",
