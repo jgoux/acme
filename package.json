@@ -10,7 +10,7 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "eslint": "9.6.0",
-    "knip": "5.23.3",
+    "knip": "5.24.1",
     "skott": "0.35.2",
     "turbo": "1.13.4",
     "typescript": "5.5.3",
