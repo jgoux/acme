@@ -9,12 +9,12 @@
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "eslint": "9.6.0",
-    "knip": "5.25.1",
+    "eslint": "9.7.0",
+    "knip": "5.26.0",
     "skott": "0.35.2",
     "turbo": "1.13.4",
     "typescript": "5.5.3",
-    "vitest": "2.0.1"
+    "vitest": "2.0.2"
   },
   "scripts": {
     "build": "turbo run build",
