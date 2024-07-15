@@ -27,7 +27,7 @@
     "eslint-plugin-vitest": "0.5.4",
     "globals": "15.8.0",
     "prettier": "3.3.3",
-    "typescript-eslint": "8.0.0-alpha.42"
+    "typescript-eslint": "8.0.0-alpha.44"
   },
   "devDependencies": {
     "@types/eslint": "8.56.10"
