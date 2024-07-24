@@ -30,6 +30,6 @@
     "typescript-eslint": "8.0.0-alpha.44"
   },
   "devDependencies": {
-    "@types/eslint": "8.56.10"
+    "@types/eslint": "9.6.0"
   }
 }
