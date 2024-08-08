@@ -17,10 +17,10 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "20.14.10",
-    "eslint": "9.7.0",
-    "typescript": "5.5.3",
-    "vitest": "2.0.2"
+    "@types/node": "20.14.14",
+    "eslint": "9.8.0",
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
