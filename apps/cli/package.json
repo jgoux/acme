@@ -19,14 +19,14 @@
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "22.9.3",
-    "@types/yargs": "17.0.32",
-    "eslint": "9.7.0",
-    "execa": "9.3.0",
-    "tsx": "4.16.2",
-    "typescript": "5.5.3",
-    "vitest": "2.0.2",
+    "@total-typescript/ts-reset": "0.6.1",
+    "@types/node": "22.10.1",
+    "@types/yargs": "17.0.33",
+    "eslint": "9.16.0",
+    "execa": "9.5.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8",
     "wait-for-localhost": "4.1.0"
   },
   "scripts": {
