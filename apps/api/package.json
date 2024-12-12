@@ -14,22 +14,22 @@
   "dependencies": {
     "@acme/core": "workspace:*",
     "@trpc/server": "10.45.2",
-    "drizzle-orm": "0.32.0",
-    "postgres": "3.4.4",
-    "valibot": "0.36.0"
+    "drizzle-orm": "0.38.1",
+    "postgres": "3.4.5",
+    "valibot": "0.42.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "22.9.3",
-    "dotenv": "16.4.5",
-    "dotenv-cli": "7.4.2",
-    "drizzle-kit": "0.23.0",
-    "eslint": "9.7.0",
-    "tsx": "4.16.2",
-    "typescript": "5.5.3",
-    "vitest": "2.0.2"
+    "@total-typescript/ts-reset": "0.6.1",
+    "@types/node": "22.10.2",
+    "dotenv": "16.4.7",
+    "dotenv-cli": "7.4.4",
+    "drizzle-kit": "0.30.0",
+    "eslint": "9.16.0",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
