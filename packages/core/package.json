@@ -20,7 +20,7 @@
     "@types/node": "22.9.3",
     "eslint": "9.7.0",
     "typescript": "5.5.3",
-    "vitest": "2.0.2"
+    "vitest": "3.0.2"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
