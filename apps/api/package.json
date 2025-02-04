@@ -29,7 +29,7 @@
     "eslint": "9.7.0",
     "tsx": "4.16.2",
     "typescript": "5.5.3",
-    "vitest": "3.0.2"
+    "vitest": "3.0.5"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
