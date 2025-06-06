@@ -39,8 +39,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/core
       '@trpc/server':
-        specifier: 10.45.2
-        version: 10.45.2
+        specifier: 11.3.1
+        version: 11.3.1(typescript@5.5.3)
       drizzle-orm:
         specifier: 0.32.0
         version: 0.32.0(@types/react@19.0.1)(postgres@3.4.4)(react@19.0.0)
@@ -94,11 +94,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/core
       '@trpc/client':
-        specifier: 10.45.2
-        version: 10.45.2(@trpc/server@10.45.2)
+        specifier: 11.3.1
+        version: 11.3.1(@trpc/server@11.3.1(typescript@5.5.3))(typescript@5.5.3)
       '@trpc/server':
-        specifier: 10.45.2
-        version: 10.45.2
+        specifier: 11.3.1
+        version: 11.3.1(typescript@5.5.3)
       yargs:
         specifier: 17.7.2
         version: 17.7.2
@@ -2284,13 +2284,16 @@ packages:
   '@total-typescript/ts-reset@0.5.1':
     resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
 
-  '@trpc/client@10.45.2':
-    resolution: {integrity: sha512-ykALM5kYWTLn1zYuUOZ2cPWlVfrXhc18HzBDyRhoPYN0jey4iQHEFSEowfnhg1RvYnrAVjNBgHNeSAXjrDbGwg==}
+  '@trpc/client@11.3.1':
+    resolution: {integrity: sha512-UlLsUN7x8qD07FaGzdz/FG3K+kpaYowZkmVZ8R4Nlx1Yj01Kgr1Y+cGjtBdRpd+0l7uVylwDPmHA1OxYE6zHgA==}
     peerDependencies:
-      '@trpc/server': 10.45.2
+      '@trpc/server': 11.3.1
+      typescript: '>=5.7.2'
 
-  '@trpc/server@10.45.2':
-    resolution: {integrity: sha512-wOrSThNNE4HUnuhJG6PfDRp4L2009KDVxsd+2VYH8ro6o/7/jwYZ8Uu5j+VaW+mOmc8EHerHzGcdbGNQSAUPgg==}
+  '@trpc/server@11.3.1':
+    resolution: {integrity: sha512-5Rjigjqwl9ieXL91ebZ1M4FPFXQJ5qipRyZuBoNzvqkq7Qlig+2F4WwLELyiTSNk2bGzdJTXJMKLhRE9Z56D8w==}
+    peerDependencies:
+      typescript: '>=5.7.2'
 
   '@tsconfig/node20@20.1.4':
     resolution: {integrity: sha512-sqgsT69YFeLWf5NtJ4Xq/xAF8p4ZQHlmGW74Nu2tD4+g5fAsposc4ZfaaPixVu4y01BEiDCWLRDCvDM5JOsRxg==}
@@ -8632,11 +8635,14 @@ snapshots:
 
   '@total-typescript/ts-reset@0.5.1': {}
 
-  '@trpc/client@10.45.2(@trpc/server@10.45.2)':
+  '@trpc/client@11.3.1(@trpc/server@11.3.1(typescript@5.5.3))(typescript@5.5.3)':
     dependencies:
-      '@trpc/server': 10.45.2
+      '@trpc/server': 11.3.1(typescript@5.5.3)
+      typescript: 5.5.3
 
-  '@trpc/server@10.45.2': {}
+  '@trpc/server@11.3.1(typescript@5.5.3)':
+    dependencies:
+      typescript: 5.5.3
 
   '@tsconfig/node20@20.1.4': {}
 
