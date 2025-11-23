@@ -24,7 +24,7 @@
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "24.10.1",
     "dotenv": "17.2.0",
-    "dotenv-cli": "10.0.0",
+    "dotenv-cli": "11.0.0",
     "drizzle-kit": "0.23.0",
     "eslint": "9.7.0",
     "tsx": "4.16.2",
