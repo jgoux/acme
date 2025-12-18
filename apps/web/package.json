@@ -44,7 +44,7 @@
     "axe-playwright": "2.0.1",
     "eslint": "9.7.0",
     "start-server-and-test": "2.0.4",
-    "storybook": "8.2.2",
+    "storybook": "8.6.15",
     "typescript": "5.5.3",
     "vite": "5.4.21",
     "vite-bundle-visualizer": "1.2.1"
