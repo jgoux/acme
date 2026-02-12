@@ -12,21 +12,21 @@
   "dependencies": {
     "@acme/api": "workspace:*",
     "@acme/core": "workspace:*",
-    "@trpc/client": "11.3.1",
-    "@trpc/server": "11.8.0",
+    "@trpc/client": "11.10.0",
+    "@trpc/server": "11.10.0",
     "yargs": "17.7.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@total-typescript/ts-reset": "0.5.1",
-    "@types/node": "24.10.1",
-    "@types/yargs": "17.0.32",
-    "eslint": "9.7.0",
-    "execa": "9.3.0",
-    "tsx": "4.16.2",
-    "typescript": "5.5.3",
-    "vitest": "3.0.5",
+    "@total-typescript/ts-reset": "0.6.1",
+    "@types/node": "24.10.13",
+    "@types/yargs": "17.0.35",
+    "eslint": "9.39.2",
+    "execa": "9.6.1",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4",
     "wait-for-localhost": "4.1.0"
   },
   "scripts": {
