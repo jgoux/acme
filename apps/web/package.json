@@ -40,7 +40,7 @@
     "@types/node": "24.10.1",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
-    "@vitejs/plugin-react": "4.3.1",
+    "@vitejs/plugin-react": "5.1.4",
     "axe-playwright": "2.0.1",
     "eslint": "9.7.0",
     "start-server-and-test": "2.0.4",
