@@ -1,7 +1,7 @@
 {
   "extends": [
     "@tsconfig/strictest",
-    "@tsconfig/node20"
+    "@tsconfig/node22"
   ],
   "compilerOptions": {
     "allowJs": true,
