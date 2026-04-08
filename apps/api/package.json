@@ -14,7 +14,7 @@
   "dependencies": {
     "@acme/core": "workspace:*",
     "@trpc/server": "11.8.0",
-    "drizzle-orm": "0.32.0",
+    "drizzle-orm": "0.45.2",
     "postgres": "3.4.4",
     "valibot": "1.2.0"
   },
