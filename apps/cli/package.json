@@ -23,7 +23,7 @@
     "@types/node": "26.6.6",
     "@types/yargs": "17.0.32",
     "eslint": "9.7.0",
-    "execa": "9.3.0",
+    "execa": "10.2.1",
     "tsx": "4.16.2",
     "typescript": "5.5.3",
     "vitest": "3.2.6",
